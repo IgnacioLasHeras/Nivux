@@ -1,0 +1,2910 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIVUX | Catálogo Oficial Mayorista & Minorista</title>
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#09090B',
+            surface: '#121216',
+            elevated: '#19191F',
+            stroke: '#24242C',
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F3E5AB',
+              amber: '#F59E0B',
+              dark: '#A6831E',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Custom minimalist dark luxury styles & utilities */
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: #09090B;
+      color: #FAFAFA;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Gold metallic text & border gradients */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 55%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-gold-gradient {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 55%, #B88E1E 100%);
+    }
+
+    .bg-gold-gradient:hover {
+      background: linear-gradient(135deg, #FAF0C8 0%, #E0B942 55%, #C99D26 100%);
+    }
+
+    .border-gold-subtle {
+      border-color: rgba(212, 175, 55, 0.28);
+    }
+
+    .shadow-gold-glow {
+      box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Hide scrollbar for clean horizontal pill scrolling */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Custom subtle vertical scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #24242C;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+
+    /* Smooth card hover & photo frame */
+    .product-card {
+      background-color: #121216;
+      border-color: #24242C;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212, 175, 55, 0.48);
+      box-shadow: 0 18px 36px -16px rgba(0, 0, 0, 0.85), 0 0 24px -12px rgba(212, 175, 55, 0.22);
+    }
+
+    .photo-frame {
+      background-color: #0D0D10;
+      border-color: #24242C;
+    }
+
+    /* Remove number input spinners */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-gold/30 selection:text-gold-light">
+
+  <!-- ==================== STICKY HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-[#09090B]/90 backdrop-blur-xl border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Top Row: Brand, Search, USD Rate & Cart -->
+      <div class="flex items-center justify-between gap-3 py-3 sm:py-3.5">
+        <!-- Brand Logo -->
+        <a href="#" onclick="resetFilters(event)" class="flex items-center gap-2.5 shrink-0 group">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-black border border-gold-subtle flex items-center justify-center overflow-hidden p-1 shadow-gold-glow group-hover:border-gold transition-colors">
+            <img
+              src="Logo.png"
+              data-base="Logo"
+              alt="NIVUX Logo"
+              onerror="handleSmartImageError(this)"
+              class="w-full h-full object-contain"
+            />
+            <svg class="hidden w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NIVUX Logo">
+              <defs>
+                <clipPath id="nivuxHexClipHeader">
+                  <polygon points="50,10 84.6,30 84.6,70 50,90 15.4,70 15.4,30" />
+                </clipPath>
+              </defs>
+              <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" fill="#000000" stroke="#FFFFFF" stroke-width="7.5" stroke-linejoin="miter" />
+              <g clip-path="url(#nivuxHexClipHeader)">
+                <line x1="62" y1="14" x2="62" y2="49" stroke="#FFFFFF" stroke-width="7.5" />
+                <line x1="23" y1="24" x2="65.5" y2="48.5" stroke="#FFFFFF" stroke-width="7.5" />
+                <line x1="38" y1="51" x2="38" y2="86" stroke="#FFFFFF" stroke-width="7.5" />
+                <line x1="34.5" y1="51.5" x2="77" y2="76" stroke="#FFFFFF" stroke-width="7.5" />
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-lg sm:text-xl font-extrabold tracking-[0.18em] text-white">NIVUX</span>
+              <span class="hidden md:inline-block text-[10px] font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded bg-gold/10 text-gold border border-gold/25">B2B / B2C</span>
+            </div>
+            <p class="text-[11px] text-zinc-400 tracking-wider leading-none">nivux.shop</p>
+          </div>
+        </a>
+
+        <!-- Desktop Real-Time Search Bar -->
+        <div class="hidden md:flex flex-1 max-w-md mx-4">
+          <div class="relative w-full">
+            <svg class="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/>
+            </svg>
+            <input
+              id="searchInputDesktop"
+              type="text"
+              placeholder="Buscar producto, sabor, aroma o marca..."
+              oninput="handleSearch(this.value)"
+              class="w-full bg-surface text-sm text-white placeholder-zinc-500 pl-10 pr-9 py-2.5 rounded-xl border border-zinc-800 focus:outline-none focus:border-gold transition-colors"
+            />
+            <button
+              id="clearSearchDesktop"
+              onclick="clearSearch()"
+              class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white p-1"
+              title="Limpiar búsqueda"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Controls: USD Reference Rate + Cart Button -->
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <!-- USD Reference Rate Selector -->
+          <div class="flex items-center bg-surface border border-[#24242C] rounded-xl px-2.5 py-1.5 gap-1.5" title="Cotización USD de referencia para estimar precios mayoristas en ARS">
+            <div class="flex flex-col">
+              <span class="text-[9px] uppercase tracking-wider text-zinc-400 font-semibold leading-none">USD Ref.</span>
+              <div class="flex items-center gap-0.5 mt-0.5">
+                <span class="text-xs font-bold text-gold">$</span>
+                <input
+                  id="usdRateInput"
+                  type="number"
+                  min="1"
+                  step="1"
+                  value="1596"
+                  onchange="updateUsdRate(this.value)"
+                  oninput="updateUsdRate(this.value)"
+                  class="w-12 sm:w-14 bg-transparent text-xs sm:text-sm font-bold text-white tabular-nums focus:outline-none focus:text-gold"
+                  aria-label="Cotización dólar referencia en pesos"
+                />
+              </div>
+            </div>
+            <button
+              id="toggleArsEqBtn"
+              onclick="toggleArsEquivalents()"
+              class="px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide border transition-colors bg-gold/15 text-gold border-gold/30 hover:bg-gold/25"
+              title="Mostrar u ocultar equivalencia en ARS junto a precios USD"
+            >
+              ≈ ARS
+            </button>
+          </div>
+
+          <!-- Cart Trigger Button -->
+          <button
+            onclick="openCart()"
+            class="relative flex items-center gap-2 bg-gold-gradient text-obsidian font-bold px-3.5 sm:px-4 py-2.5 rounded-xl shadow-gold-glow transition-all active:scale-95"
+            aria-label="Abrir carrito"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="hidden sm:inline text-sm">Pedido</span>
+            <span id="cartBadge" class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-extrabold rounded-full bg-obsidian text-gold tabular-nums">
+              0
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Search Bar -->
+      <div class="md:hidden pb-2.5">
+        <div class="relative w-full">
+          <svg class="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/>
+          </svg>
+          <input
+            id="searchInputMobile"
+            type="text"
+            placeholder="Buscar producto, sabor, aroma o color..."
+            oninput="handleSearch(this.value)"
+            class="w-full bg-surface text-sm text-white placeholder-zinc-500 pl-10 pr-9 py-2 rounded-xl border border-zinc-800 focus:outline-none focus:border-gold"
+          />
+          <button
+            id="clearSearchMobile"
+            onclick="clearSearch()"
+            class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white p-1"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <nav id="categoryBar" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 pt-0.5" aria-label="Categorías">
+        <!-- Injected dynamically via JS -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== COMPACT LUXURY HERO ==================== -->
+  <section class="relative border-b border-zinc-800/80 overflow-hidden">
+    <!-- Subtle ambient gold glow -->
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[560px] h-[220px] bg-gold/10 blur-[110px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 relative">
+      <div class="space-y-2.5 max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-gold-subtle text-xs font-semibold text-gold">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+          NIVUX · Abastecimiento Directo Argentina
+        </div>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
+          Catálogo Oficial <span class="text-gold-gradient">Mayorista & Minorista</span>
+        </h1>
+        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+          Combiná sabores, aromas o colores del mismo producto y el carrito aplica automáticamente tu <strong class="text-zinc-200 font-semibold">escala mayorista surtida</strong>.
+        </p>
+      </div>
+
+      <!-- Trust Badges Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-5 pt-5 border-t border-zinc-800/70">
+        <div class="flex items-center gap-2.5 bg-surface/70 border border-zinc-800/80 rounded-xl px-3.5 py-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gold/10 border border-gold/25 flex items-center justify-center text-gold shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-zinc-200">Envíos a todo el país por <strong class="text-white">Correo Argentino</strong></span>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface/70 border border-zinc-800/80 rounded-xl px-3.5 py-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gold/10 border border-gold/25 flex items-center justify-center text-gold shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-zinc-200"><strong class="text-white">Precios escalonados automáticos</strong> (surtido por línea)</span>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface/70 border border-zinc-800/80 rounded-xl px-3.5 py-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gold/10 border border-gold/25 flex items-center justify-center text-gold shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-zinc-200">Atención directa por <strong class="text-white">WhatsApp</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN PRODUCT CATALOG ==================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <!-- Active Filter Info Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+      <div class="flex items-center gap-2">
+        <h2 id="catalogHeading" class="text-base sm:text-lg font-bold text-white">Todos los productos</h2>
+        <span id="productCountBadge" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-surface border border-zinc-800 text-zinc-400 tabular-nums">14</span>
+      </div>
+      <div id="activeFilterPills" class="flex flex-wrap items-center gap-2"></div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Product Cards rendered dynamically via JS -->
+    </div>
+
+    <!-- Empty Search State -->
+    <div id="emptyState" class="hidden text-center py-16 px-4 bg-surface rounded-2xl border border-zinc-800">
+      <div class="w-12 h-12 rounded-2xl bg-elevated border border-zinc-700 flex items-center justify-center mx-auto mb-3 text-gold">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="text-base font-bold text-white">No encontramos productos con ese filtro</h3>
+      <p class="text-xs sm:text-sm text-zinc-400 mt-1">Probá buscando otro sabor, aroma, color o limpiá los filtros activos.</p>
+      <button onclick="resetFilters()" class="mt-4 px-4 py-2 rounded-xl bg-gold-gradient text-obsidian text-xs font-bold">
+        Ver todo el catálogo
+      </button>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-zinc-800/80 bg-[#070709] mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-black border border-gold-subtle flex items-center justify-center overflow-hidden p-1 shrink-0">
+            <img
+              src="Logo.png"
+              data-base="Logo"
+              alt="NIVUX Logo"
+              onerror="handleSmartImageError(this)"
+              class="w-full h-full object-contain"
+            />
+            <svg class="hidden w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NIVUX Logo">
+              <defs>
+                <clipPath id="nivuxHexClipFooter">
+                  <polygon points="50,10 84.6,30 84.6,70 50,90 15.4,70 15.4,30" />
+                </clipPath>
+              </defs>
+              <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" fill="#000000" stroke="#FFFFFF" stroke-width="7.5" stroke-linejoin="miter" />
+              <g clip-path="url(#nivuxHexClipFooter)">
+                <line x1="62" y1="14" x2="62" y2="49" stroke="#FFFFFF" stroke-width="7.5" />
+                <line x1="23" y1="24" x2="65.5" y2="48.5" stroke="#FFFFFF" stroke-width="7.5" />
+                <line x1="38" y1="51" x2="38" y2="86" stroke="#FFFFFF" stroke-width="7.5" />
+                <line x1="34.5" y1="51.5" x2="77" y2="76" stroke="#FFFFFF" stroke-width="7.5" />
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-base font-extrabold tracking-[0.18em] text-white">NIVUX</span>
+              <span class="text-xs text-zinc-500">· nivux.shop</span>
+            </div>
+            <p class="text-xs text-zinc-500 mt-1">Ventas Mayoristas y Minoristas · Retiro en Caseros / Zona Oeste y envíos a todo el país.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a
+            href="https://wa.me/5491128396149"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-300 hover:text-gold transition-colors px-3 py-2 rounded-xl bg-surface border border-zinc-800"
+          >
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            WhatsApp: +54 9 11 2839-6149
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== PRODUCT DETAIL MODAL ==================== -->
+  <div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-5 bg-black/80 backdrop-blur-sm">
+    <div class="bg-surface border border-zinc-800 rounded-2xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative">
+      <button
+        onclick="closeProductModal()"
+        class="absolute top-3.5 right-3.5 z-10 w-9 h-9 rounded-xl bg-obsidian/80 border border-zinc-700 text-zinc-300 hover:text-white hover:border-gold flex items-center justify-center transition-colors"
+        aria-label="Cerrar detalle"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+      </button>
+      <div id="productModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE-OVER CART & WHATSAPP CHECKOUT ==================== -->
+  <div id="cartDrawerBackdrop" onclick="closeCart()" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-xs transition-opacity"></div>
+  <aside
+    id="cartDrawer"
+    class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-[#0E0E11] border-l border-zinc-800 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+    aria-label="Carrito de compras"
+  >
+    <!-- Cart Header -->
+    <div class="px-5 py-4 border-b border-zinc-800 flex items-center justify-between bg-surface">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center text-gold">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-base font-bold text-white leading-tight">Tu Pedido NIVUX</h2>
+          <p class="text-[11px] text-zinc-400">Escalas mayoristas calculadas automáticamente</p>
+        </div>
+      </div>
+      <button onclick="closeCart()" class="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-elevated transition-colors" aria-label="Cerrar carrito">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- Cart Scrollable Content -->
+    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4">
+      <!-- Dynamic cart items injected here -->
+    </div>
+
+    <!-- Cart Checkout Footer -->
+    <div id="cartFooter" class="border-t border-zinc-800 bg-surface p-4 sm:p-5 space-y-3.5">
+      <!-- Dynamic subtotals & checkout selectors injected here -->
+    </div>
+  </aside>
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="toastContainer" class="fixed bottom-4 right-4 z-[60] flex flex-col gap-2 pointer-events-none max-w-sm"></div>
+
+  <!-- ==================== APPLICATION LOGIC ==================== -->
+  <script>
+    // =========================================================================
+    // CATÁLOGO OFICIAL NIVUX (Editá acá fotos, nombres, sabores y precios)
+    // Para cambiar la foto de un producto, reemplazá el valor de `image`
+    // por el nombre de tu archivo (ej: 'foto.jpg') o un link directo (https://...)
+    // =========================================================================
+    const PRODUCTS = [
+      // ================= TECH & AUDIO =================
+      {
+        id: 'airpods-pro-2',
+        name: 'AirPods Pro 2',
+        category: 'Tech & Audio',
+        badge: '',
+        image: 'AirPods Pro 2',
+        studioWhite: true,
+        variantLabel: 'Color',
+        variants: ['Blanco'],
+        swatches: { 'Blanco': '#F4F4F5' },
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 25000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 10.5, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 9.7, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 9, currency: 'USD', label: '20 u.' },
+          { min: 50, price: 8, currency: 'USD', label: '50 u.' },
+          { min: 100, price: 7.5, currency: 'USD', label: '100 u.' }
+        ]
+      },
+      {
+        id: 'battery-pack-magsafe',
+        name: 'Battery Pack',
+        category: 'Tech & Audio',
+        badge: '',
+        image: 'Battery Pack',
+        studioWhite: true,
+        variantLabel: 'Color',
+        variants: ['Blanco'],
+        swatches: { 'Blanco': '#F4F4F5' },
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 25000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 11.3, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 10.6, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 9.7, currency: 'USD', label: '20 u.' },
+          { min: 50, price: 8.7, currency: 'USD', label: '50 u.' },
+          { min: 100, price: 8, currency: 'USD', label: '100 u.' }
+        ]
+      },
+      {
+        id: 'adaptador-cable-20w',
+        name: 'Adaptador + Cable iPhone 20W',
+        category: 'Tech & Audio',
+        badge: '',
+        image: 'Cargador y adaptador',
+        studioWhite: true,
+        variantLabel: 'Presentación',
+        variants: ['Combo 20W'],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 26000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 9, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 8, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 7, currency: 'USD', label: '20 u.' },
+          { min: 50, price: 6, currency: 'USD', label: '50 u.' },
+          { min: 100, price: 5, currency: 'USD', label: '100 u.' }
+        ]
+      },
+      {
+        id: 'jbl-go4-pro',
+        name: 'JBL GO 4 Pro',
+        category: 'Tech & Audio',
+        badge: '',
+        image: 'JBL GO 4 PRO',
+        studioWhite: true,
+        variantLabel: 'Color',
+        variants: ['Negro'],
+        swatches: { 'Negro': '#18181B' },
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 30000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 13.5, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 12.3, currency: 'USD', label: '10 u.' },
+          { min: 25, price: 11.2, currency: 'USD', label: '25 u.' },
+          { min: 50, price: 9.7, currency: 'USD', label: '50 u.' },
+          { min: 100, price: 8.9, currency: 'USD', label: '100 u.' }
+        ]
+      },
+      {
+        id: 'airpod-max-1-1',
+        name: 'AirPod Max',
+        category: 'Tech & Audio',
+        badge: '',
+        image: 'Airpod Max',
+        studioWhite: true,
+        variantLabel: 'Color',
+        variants: ['Silver', 'Space Gray', 'Surtido'],
+        swatches: {
+          'Silver': '#E4E4E7',
+          'Space Gray': '#3F3F46',
+          'Surtido': 'linear-gradient(135deg, #E4E4E7 50%, #3F3F46 50%)'
+        },
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 60000, currency: 'ARS', label: '1 u.' },
+          { min: 3, price: 22, currency: 'USD', label: '3 u.' },
+          { min: 5, price: 19.5, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 18, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 16.9, currency: 'USD', label: '20 u.' }
+        ]
+      },
+
+      // ================= VAPES =================
+      {
+        id: 'ebcreate-bc-pro-2026',
+        name: 'Ebcreate BC PRO 2026 - 40k Puffs',
+        category: 'Vapes',
+        badge: '',
+        image: 'Ebcreate',
+        studioWhite: true,
+        variantLabel: 'Sabor',
+        variants: [
+          'Grape Twist',
+          'Pink Lemonade',
+          'Raspberry Mallo',
+          'Aurora Berries',
+          'Blackberry Grape',
+          'Pineapple POM',
+          'Triple Berry',
+          'Blue Razz Ice',
+          'Strawberry Blend',
+          'Strawberry Kiwi',
+          'Black Mint',
+          'Golden Berry',
+          'Sour Apple Ice',
+          'Tropical Baja'
+        ],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 22500, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 10.5, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 9.5, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 9, currency: 'USD', label: '20 u.' },
+          { min: 50, price: 8.5, currency: 'USD', label: '50 u.' }
+        ]
+      },
+      {
+        id: 'dummy-6900',
+        name: 'Dummy 6900',
+        category: 'Vapes',
+        badge: '',
+        image: 'Dummy 6900',
+        studioWhite: true,
+        wholesaleOnlyNote: 'Mínimo mayorista: 10 unidades (podés combinar sabores)',
+        variantLabel: 'Sabor',
+        variants: [
+          'Gooba Grape',
+          'Alien Invasion',
+          'Fizzy Lemon',
+          'King of NY',
+          'Clear',
+          'Surtido a elección'
+        ],
+        minQty: 10,
+        tiers: [
+          { min: 10, price: 7, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 6.5, currency: 'USD', label: '20 u.' },
+          { min: 30, price: 6, currency: 'USD', label: '30 u.' },
+          { min: 50, price: 5.4, currency: 'USD', label: '50 u.' },
+          { min: 100, price: 4.9, currency: 'USD', label: '100 u.' }
+        ]
+      },
+      {
+        id: 'dinner-lady-galaxy-60k',
+        name: 'Dinner Lady Galaxy 60K Puffs',
+        category: 'Vapes',
+        badge: '',
+        image: 'Dinner Lady Galaxy',
+        studioWhite: true,
+        variantLabel: 'Sabor',
+        variants: [
+          'California Cherry',
+          'Sour Pink Dust',
+          'Ultimate Melon',
+          'Sour Apple B Pop',
+          'Cherry Strazz',
+          'Miami Mint',
+          'Strawberry B Pop',
+          'Sour Mango Pineapple',
+          'Fabk Blackberry',
+          'Grape Bubblegum'
+        ],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 30000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 15.5, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 14.8, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 14.2, currency: 'USD', label: '20 u.' },
+          { min: 50, price: 13.6, currency: 'USD', label: '50 u.' }
+        ]
+      },
+      {
+        id: 'avotx-space-40k',
+        name: 'Avotx Space 40K Puffs',
+        category: 'Vapes',
+        badge: '',
+        image: 'Avotx Space',
+        studioWhite: true,
+        variantLabel: 'Sabor',
+        variants: [
+          'Anna Watermelon',
+          'Blue Razz Ice',
+          'Mint Ice',
+          'Mango Peach',
+          'Strawberry Kiwi',
+          'Surtido a elección'
+        ],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 30000, currency: 'ARS', label: '1 u.' },
+          { min: 3, price: 14, currency: 'USD', label: '3 u.' },
+          { min: 10, price: 13.2, currency: 'USD', label: '10 u.' },
+          { min: 30, price: 12.7, currency: 'USD', label: '30 u.' },
+          { min: 50, price: 12.4, currency: 'USD', label: '50 u.' }
+        ]
+      },
+
+      // ================= FRAGANCIAS & BEAUTY =================
+      {
+        id: 'bodysplash-vs',
+        name: "Body Splash Victoria's Secret",
+        category: 'Fragancias & Beauty',
+        badge: '',
+        image: 'BodySplash Victoria Secrets',
+        studioWhite: false,
+        variantLabel: 'Aroma',
+        variants: [
+          'Coconut Passion',
+          'Bare Vanilla',
+          'Rush',
+          'Love Spell',
+          'Romantic',
+          'Midnight Bloom',
+          'Coconut Passion SHIMMER',
+          'Bare Vanilla SHIMMER',
+          'Velvet Petals',
+          'Love Spell SHIMMER',
+          'Pure Seduction',
+          'Pear Glace'
+        ],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 31000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 17, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 16.5, currency: 'USD', label: '10 u.' },
+          { min: 25, price: 16, currency: 'USD', label: '25 u.' },
+          { min: 50, price: 15.5, currency: 'USD', label: '50 u.' }
+        ]
+      },
+      {
+        id: 'cremas-vs',
+        name: "Cremas Victoria's Secret",
+        category: 'Fragancias & Beauty',
+        badge: '',
+        image: 'Crema Victoria Secrets',
+        studioWhite: false,
+        variantLabel: 'Aroma',
+        variants: [
+          'Amber Romance',
+          'Rush',
+          'Aqua Kiss',
+          'Romantic',
+          'Temptation',
+          'Love Spell'
+        ],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 31000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 17, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 16.5, currency: 'USD', label: '10 u.' },
+          { min: 25, price: 16, currency: 'USD', label: '25 u.' },
+          { min: 50, price: 15.5, currency: 'USD', label: '50 u.' }
+        ]
+      },
+      {
+        id: 'cremas-karseell',
+        name: 'Cremas Karseell',
+        category: 'Fragancias & Beauty',
+        badge: '',
+        image: 'Crema Karseell',
+        studioWhite: false,
+        variantLabel: 'Presentación',
+        variants: ['500ml'],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 23000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 12, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 11, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 10, currency: 'USD', label: '20 u.' },
+          { min: 50, price: 9, currency: 'USD', label: '50 u.' }
+        ]
+      },
+
+      // ================= BAZAR & INDUMENTARIA =================
+      {
+        id: 'stanley-quencher-12l',
+        name: 'Vasos Quencher Stanley 1.2L',
+        category: 'Bazar & Indumentaria',
+        badge: '',
+        image: 'Vaso Quencher Stanley',
+        studioWhite: false,
+        variantLabel: 'Presentación',
+        variants: ['1.2L'],
+        minQty: 1,
+        tiers: [
+          { min: 1, price: 29000, currency: 'ARS', label: '1 u.' },
+          { min: 5, price: 11, currency: 'USD', label: '5 u.' },
+          { min: 10, price: 10, currency: 'USD', label: '10 u.' },
+          { min: 20, price: 9, currency: 'USD', label: '20 u.' },
+          { min: 40, price: 8, currency: 'USD', label: '40 u.' }
+        ]
+      },
+      {
+        id: 'medias-nike-drifit',
+        name: 'Medias Nike 3/4',
+        category: 'Bazar & Indumentaria',
+        badge: '',
+        image: 'Media Nike',
+        studioWhite: true,
+        variantLabel: 'Presentación',
+        variants: ['3/4 Dri-Fit'],
+        isSocksSpecial: true,
+        minQty: 1,
+        // Wholesale dozen tiers (used when ordering by docena)
+        tiers: [
+          { min: 0, price: 17000, currency: 'ARS', label: 'Pack 3 pares', isPack: true },
+          { min: 1, price: 43000, currency: 'ARS', label: '1 doc.' },
+          { min: 3, price: 39000, currency: 'ARS', label: '3 doc.' },
+          { min: 5, price: 37000, currency: 'ARS', label: '5 doc.' },
+          { min: 10, price: 36000, currency: 'ARS', label: '10 doc.' },
+          { min: 20, price: 34500, currency: 'ARS', label: '20 doc.' },
+          { min: 30, price: 33000, currency: 'ARS', label: '30 doc.' }
+        ]
+      }
+    ];
+
+    const CATEGORIES = [
+      'Todos',
+      'Tech & Audio',
+      'Vapes',
+      'Fragancias & Beauty',
+      'Bazar & Indumentaria'
+    ];
+
+    // ================= PERSISTENT & UI STATE =================
+    const STORAGE_KEYS = {
+      USD_RATE: 'nivux_usd_rate_v2',
+      SHOW_ARS_EQ: 'nivux_show_ars_eq_v2',
+      CART: 'nivux_cart_v2',
+      CUSTOMER_INFO: 'nivux_customer_info_v1'
+    };
+
+    let state = {
+      usdRate: 1596,
+      showArsEq: true,
+      selectedCategory: 'Todos',
+      searchQuery: '',
+      specialBadgeFilter: '', // '' | 'NUEVO INGRESO' | 'REINGRESO'
+      selectedVariants: {},   // { [productId]: variantName }
+      selectedQuantities: {}, // { [productId]: number }
+      socksOrderMode: {},     // { [productId]: 'pack' | 'dozen' }
+      modalAssortmentQtys: {}, // { [productId]: { [variantName]: number } }
+      cart: [],               // Array of { key, productId, variant, qty, unitMode }
+      customerInfo: {
+        fullName: '',
+        dni: '',
+        locality: '',
+        postalCode: '',
+        branch: '',
+        phone: '',
+        email: ''
+      },
+      formValidationAttempted: false,
+      activeModalProductId: null
+    };
+
+    // ================= INITIALIZATION =================
+    function initApp() {
+      loadFromStorage();
+
+      getProducts().forEach(p => {
+        if (!state.selectedVariants[p.id]) {
+          state.selectedVariants[p.id] = p.variants[0] || 'Estándar';
+        }
+        if (!state.selectedQuantities[p.id]) {
+          state.selectedQuantities[p.id] = p.minQty || 1;
+        }
+        if (p.isSocksSpecial && !state.socksOrderMode[p.id]) {
+          state.socksOrderMode[p.id] = 'pack';
+        }
+      });
+
+      const usdInput = document.getElementById('usdRateInput');
+      if (usdInput) usdInput.value = state.usdRate;
+      updateArsToggleBtnUI();
+
+      renderCategoryBar();
+      renderCatalog();
+      renderCart();
+    }
+
+    function loadFromStorage() {
+      try {
+        const savedRate = localStorage.getItem(STORAGE_KEYS.USD_RATE);
+        if (savedRate && !isNaN(Number(savedRate)) && Number(savedRate) > 0) {
+          state.usdRate = Number(savedRate);
+        }
+
+        const savedShowEq = localStorage.getItem(STORAGE_KEYS.SHOW_ARS_EQ);
+        if (savedShowEq !== null) {
+          state.showArsEq = savedShowEq === 'true';
+        }
+
+        const savedCart = localStorage.getItem(STORAGE_KEYS.CART);
+        if (savedCart) {
+          const parsed = JSON.parse(savedCart);
+          if (Array.isArray(parsed)) {
+            const mergedMap = new Map();
+            parsed.forEach(item => {
+              const prod = getProductById(item.productId);
+              if (!prod || !item.qty || item.qty <= 0) return;
+              const validVariant = prod.variants.includes(item.variant) ? item.variant : prod.variants[0];
+              const unitMode = prod.isSocksSpecial ? (item.unitMode || 'pack') : 'unit';
+              const normalizedKey = `${prod.id}::${validVariant}::${unitMode}`;
+              if (mergedMap.has(normalizedKey)) {
+                mergedMap.get(normalizedKey).qty += item.qty;
+              } else {
+                mergedMap.set(normalizedKey, {
+                  key: normalizedKey,
+                  productId: prod.id,
+                  variant: validVariant,
+                  qty: item.qty,
+                  unitMode
+                });
+              }
+            });
+            state.cart = Array.from(mergedMap.values());
+          }
+        }
+
+        const savedCustomer = localStorage.getItem(STORAGE_KEYS.CUSTOMER_INFO);
+        if (savedCustomer) {
+          const parsedCustomer = JSON.parse(savedCustomer);
+          if (parsedCustomer && typeof parsedCustomer === 'object') {
+            state.customerInfo = { ...state.customerInfo, ...parsedCustomer };
+          }
+        }
+      } catch (e) {
+        console.warn('Storage read fallback:', e);
+      }
+    }
+
+    function saveCustomerInfo() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.CUSTOMER_INFO, JSON.stringify(state.customerInfo));
+      } catch (e) {
+        console.warn('Could not persist customer info:', e);
+      }
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(state.cart));
+      } catch (e) {
+        console.warn('Could not persist cart:', e);
+      }
+    }
+
+    function getProducts() {
+      return PRODUCTS;
+    }
+
+    function getProductById(id) {
+      return PRODUCTS.find(p => p.id === id);
+    }
+
+    // ================= FORMATTING HELPERS =================
+    function formatARS(amount) {
+      return '$' + Math.round(amount).toLocaleString('es-AR');
+    }
+
+    function formatUSD(amount) {
+      // Show clean decimal without trailing .0 when integer
+      const formatted = Number.isInteger(amount)
+        ? amount.toString()
+        : amount.toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
+      return `${formatted} USD`;
+    }
+
+    function formatTierPrice(tier, includeArsEq = state.showArsEq) {
+      if (tier.currency === 'ARS') {
+        return `${formatARS(tier.price)} ARS`;
+      }
+      const base = `${formatUSD(tier.price)} c/u`;
+      if (includeArsEq) {
+        const arsEq = formatARS(tier.price * state.usdRate);
+        return `${base} <span class="text-[10px] text-zinc-400 font-normal">(≈ ${arsEq})</span>`;
+      }
+      return base;
+    }
+
+    // ================= REAL PHOTO ARTWORK RENDERER =================
+    const IMAGE_CANDIDATE_PATHS = [
+      (base) => `${base}.jpg`,
+      (base) => `${base}.jpeg`,
+      (base) => `${base}.png`,
+      (base) => `${base}.webp`,
+      (base) => `images/${base}.jpg`,
+      (base) => `images/${base}.jpeg`,
+      (base) => `images/${base}.png`,
+      (base) => `images/${base}.webp`
+    ];
+
+    function handleSmartImageError(img) {
+      const base = img.dataset.base;
+      if (!base) {
+        revealSvgFallback(img);
+        return;
+      }
+      const hasExplicitExt = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(base) || /^https?:\/\//i.test(base);
+      if (hasExplicitExt) {
+        if (!img.dataset.triedSub && !/^https?:\/\//i.test(base)) {
+          img.dataset.triedSub = '1';
+          img.src = `images/${base}`;
+          return;
+        }
+        revealSvgFallback(img);
+        return;
+      }
+
+      const nextIndex = parseInt(img.dataset.tryIdx || '1', 10);
+      if (nextIndex < IMAGE_CANDIDATE_PATHS.length) {
+        img.dataset.tryIdx = String(nextIndex + 1);
+        img.src = IMAGE_CANDIDATE_PATHS[nextIndex](base);
+      } else {
+        revealSvgFallback(img);
+      }
+    }
+
+    function revealSvgFallback(img) {
+      img.style.display = 'none';
+      const fallback = img.nextElementSibling;
+      if (fallback) fallback.classList.remove('hidden');
+    }
+
+    function getProductArtworkHTML(product, selectedVariant, heightClass = 'h-56 sm:h-60') {
+      const base = product.image;
+      const hasExplicitExt = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(base) || /^https?:\/\//i.test(base);
+      const initialSrc = hasExplicitExt ? base : IMAGE_CANDIDATE_PATHS[0](base);
+      const svgFallback = buildSvgIllustration(product.id, selectedVariant);
+
+      return `
+        <div
+          class="relative w-full ${heightClass} overflow-hidden rounded-xl bg-[#0E0E11] border border-[#24242C] p-2.5 flex items-center justify-center"
+        >
+          <img
+            src="${initialSrc}"
+            data-base="${base}"
+            data-try-idx="1"
+            alt="${product.name}"
+            onerror="handleSmartImageError(this)"
+            class="relative z-[1] max-w-full max-h-full w-auto h-auto object-contain object-center rounded-lg transition-transform duration-300 group-hover:scale-105"
+          />
+          <div class="hidden relative z-[1] w-full h-full p-3 flex items-center justify-center">
+            ${svgFallback}
+          </div>
+        </div>
+      `;
+    }
+
+    function buildSvgIllustration(id, variant) {
+      switch (id) {
+        case 'airpods-pro-2':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_22px_rgba(0,0,0,0.85)]">
+              <defs>
+                <linearGradient id="apCase" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="65%" stop-color="#E4E4E7"/>
+                  <stop offset="100%" stop-color="#A1A1AA"/>
+                </linearGradient>
+                <radialGradient id="goldHalo" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.32"/>
+                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <circle cx="110" cy="82" r="68" fill="url(#goldHalo)"/>
+              <!-- Charging Case -->
+              <rect x="64" y="34" width="92" height="92" rx="24" fill="url(#apCase)" stroke="#FFFFFF" stroke-width="1.2"/>
+              <path d="M64 66h92" stroke="#A1A1AA" stroke-width="1.5"/>
+              <rect x="97" y="62" width="26" height="5" rx="2.5" fill="#D4D4D8"/>
+              <circle cx="110" cy="82" r="2.6" fill="#22C55E"/>
+              <!-- Left Pod -->
+              <g transform="translate(46, 54)">
+                <rect x="11" y="16" width="8" height="44" rx="4" fill="url(#apCase)"/>
+                <ellipse cx="14" cy="15" rx="11" ry="9" fill="#FFFFFF"/>
+                <ellipse cx="6" cy="15" rx="4" ry="6.5" fill="#D4D4D8"/>
+                <rect x="12" y="10" width="3" height="8" rx="1.5" fill="#27272A"/>
+              </g>
+              <!-- Right Pod -->
+              <g transform="translate(148, 54)">
+                <rect x="7" y="16" width="8" height="44" rx="4" fill="url(#apCase)"/>
+                <ellipse cx="12" cy="15" rx="11" ry="9" fill="#FFFFFF"/>
+                <ellipse cx="20" cy="15" rx="4" ry="6.5" fill="#D4D4D8"/>
+                <rect x="11" y="10" width="3" height="8" rx="1.5" fill="#27272A"/>
+              </g>
+            </svg>
+          `;
+
+        case 'battery-pack-magsafe':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(0,0,0,0.85)]">
+              <defs>
+                <linearGradient id="magBody" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FAFAFA"/>
+                  <stop offset="100%" stop-color="#D4D4D8"/>
+                </linearGradient>
+              </defs>
+              <rect x="72" y="20" width="76" height="120" rx="16" fill="url(#magBody)" stroke="#FFFFFF" stroke-width="1.5"/>
+              <!-- MagSafe Magnetic Ring -->
+              <circle cx="110" cy="72" r="24" fill="none" stroke="#A1A1AA" stroke-width="5"/>
+              <circle cx="110" cy="72" r="24" fill="none" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="6 4"/>
+              <rect x="107.5" y="102" width="5" height="14" rx="2.5" fill="#A1A1AA"/>
+              <text x="110" y="131" text-anchor="middle" fill="#52525B" font-size="7.5" font-weight="700" font-family="Plus Jakarta Sans">MagSafe</text>
+            </svg>
+          `;
+
+        case 'adaptador-cable-20w':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_22px_rgba(0,0,0,0.85)]">
+              <defs>
+                <linearGradient id="brick" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="100%" stop-color="#D4D4D8"/>
+                </linearGradient>
+              </defs>
+              <!-- Prongs -->
+              <rect x="65" y="26" width="5" height="16" rx="1.5" fill="#D4D4D8"/>
+              <rect x="82" y="26" width="5" height="16" rx="1.5" fill="#D4D4D8"/>
+              <!-- 20W Adapter Body -->
+              <rect x="50" y="42" width="52" height="68" rx="10" fill="url(#brick)" stroke="#FFFFFF" stroke-width="1"/>
+              <text x="76" y="75" text-anchor="middle" fill="#18181B" font-size="13" font-weight="800" font-family="Plus Jakarta Sans">20W</text>
+              <text x="76" y="87" text-anchor="middle" fill="#71717A" font-size="6.5" font-weight="700">USB-C FAST</text>
+              <!-- Coiled Cable -->
+              <rect x="118" y="48" width="50" height="62" rx="22" fill="none" stroke="#F4F4F5" stroke-width="6"/>
+              <rect x="124" y="54" width="38" height="50" rx="16" fill="none" stroke="#D4D4D8" stroke-width="3"/>
+              <!-- Connector Tips -->
+              <rect x="127" y="106" width="8" height="14" rx="2" fill="#FFFFFF"/>
+              <rect x="129" y="120" width="4" height="7" rx="1" fill="#D4AF37"/>
+              <rect x="151" y="106" width="8" height="14" rx="2" fill="#FFFFFF"/>
+              <rect x="153" y="120" width="4" height="7" rx="1" fill="#A1A1AA"/>
+            </svg>
+          `;
+
+        case 'jbl-go4-pro':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(0,0,0,0.9)]">
+              <!-- Carry Loop -->
+              <path d="M152 54 C172 36, 186 52, 168 74" fill="none" stroke="#27272A" stroke-width="8" stroke-linecap="round"/>
+              <path d="M152 54 C172 36, 186 52, 168 74" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+              <!-- Speaker Body -->
+              <rect x="52" y="42" width="108" height="82" rx="22" fill="#18181B" stroke="#3F3F46" stroke-width="2"/>
+              <!-- Mesh Pattern -->
+              <rect x="58" y="48" width="96" height="70" rx="17" fill="#222226"/>
+              <!-- Top Buttons -->
+              <rect x="76" y="39" width="60" height="5" rx="2.5" fill="#3F3F46"/>
+              <!-- Iconic JBL Badge -->
+              <rect x="86" y="69" width="40" height="24" rx="4" fill="#F97316"/>
+              <text x="106" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="900" font-family="Plus Jakarta Sans">JBL</text>
+              <text x="106" y="107" text-anchor="middle" fill="#A1A1AA" font-size="7" font-weight="700" letter-spacing="1.5">GO 4 PRO</text>
+            </svg>
+          `;
+
+        case 'airpod-max-1-1': {
+          const isSpaceGray = variant === 'Space Gray';
+          const cupFill = isSpaceGray ? '#3F3F46' : '#E4E4E7';
+          const cupStroke = isSpaceGray ? '#71717A' : '#FFFFFF';
+          const cushionFill = isSpaceGray ? '#27272A' : '#D4D4D8';
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(0,0,0,0.85)]">
+              <!-- Headband Arch -->
+              <path d="M62 84 C62 24, 158 24, 158 84" fill="none" stroke="${cupStroke}" stroke-width="7" stroke-linecap="round"/>
+              <path d="M72 52 C88 34, 132 34, 148 52" fill="none" stroke="#A1A1AA" stroke-width="4" stroke-dasharray="2 2"/>
+              <!-- Left Earcup -->
+              <rect x="46" y="74" width="26" height="52" rx="13" fill="${cupFill}" stroke="${cupStroke}" stroke-width="1.5"/>
+              <rect x="68" y="77" width="10" height="46" rx="5" fill="${cushionFill}"/>
+              <!-- Right Earcup -->
+              <rect x="148" y="74" width="26" height="52" rx="13" fill="${cupFill}" stroke="${cupStroke}" stroke-width="1.5"/>
+              <rect x="142" y="77" width="10" height="46" rx="5" fill="${cushionFill}"/>
+              <!-- Digital Crown -->
+              <rect x="155" y="69" width="7" height="5" rx="2" fill="#D4AF37"/>
+            </svg>
+          `;
+        }
+
+        case 'ebcreate-bc-pro-2026':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(236,72,153,0.28)]">
+              <defs>
+                <linearGradient id="ebBody" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#F43F5E"/>
+                  <stop offset="50%" stop-color="#EC4899"/>
+                  <stop offset="100%" stop-color="#9333EA"/>
+                </linearGradient>
+              </defs>
+              <!-- Mouthpiece -->
+              <path d="M98 20 h16 l3 16 h-22 z" fill="#F472B6" rx="4"/>
+              <!-- Main Body -->
+              <rect x="76" y="34" width="68" height="104" rx="18" fill="url(#ebBody)" stroke="#FBCFE8" stroke-width="1.2"/>
+              <!-- Metallic Band -->
+              <rect x="76" y="48" width="68" height="10" fill="#E4E4E7" opacity="0.85"/>
+              <!-- Smart Display -->
+              <rect x="92" y="70" width="36" height="48" rx="8" fill="#18181B" stroke="#F9A8D4" stroke-width="1"/>
+              <text x="110" y="90" text-anchor="middle" fill="#F472B6" font-size="11" font-weight="800" font-family="Plus Jakarta Sans">40K</text>
+              <text x="110" y="102" text-anchor="middle" fill="#A1A1AA" font-size="6.5" font-weight="700">BC PRO</text>
+              <circle cx="110" cy="111" r="2.5" fill="#34D399"/>
+            </svg>
+          `;
+
+        case 'dummy-6900':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(168,85,247,0.32)]">
+              <defs>
+                <linearGradient id="dummyGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#C084FC"/>
+                  <stop offset="50%" stop-color="#9333EA"/>
+                  <stop offset="100%" stop-color="#581C87"/>
+                </linearGradient>
+              </defs>
+              <!-- Mouthpiece -->
+              <rect x="96" y="18" width="22" height="18" rx="6" fill="#D8B4FE"/>
+              <!-- Pod Body -->
+              <rect x="82" y="34" width="56" height="106" rx="15" fill="url(#dummyGrad)" stroke="#E9D5FF" stroke-width="1.2"/>
+              <text x="110" y="76" text-anchor="middle" fill="#FDE047" font-size="9" font-weight="900" letter-spacing="1">DUMMY</text>
+              <text x="110" y="90" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="800">6900</text>
+              <text x="110" y="103" text-anchor="middle" fill="#E9D5FF" font-size="6.5" font-weight="700">PUFFS · 5%</text>
+              <rect x="98" y="118" width="24" height="4" rx="2" fill="#FACC15"/>
+            </svg>
+          `;
+
+        case 'dinner-lady-galaxy-60k':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(245,158,11,0.22)]">
+              <defs>
+                <linearGradient id="dlBody" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#9A3412"/>
+                  <stop offset="45%" stop-color="#18181B"/>
+                  <stop offset="100%" stop-color="#09090B"/>
+                </linearGradient>
+              </defs>
+              <rect x="94" y="18" width="20" height="18" rx="5" fill="#B45309"/>
+              <rect x="78" y="34" width="64" height="106" rx="18" fill="url(#dlBody)" stroke="#D4AF37" stroke-width="1.2"/>
+              <!-- Curved Galaxy Screen -->
+              <rect x="102" y="44" width="32" height="84" rx="10" fill="#09090B" stroke="#3B82F6" stroke-width="1"/>
+              <circle cx="118" cy="76" r="10" fill="#3B82F6" opacity="0.35"/>
+              <text x="118" y="79" text-anchor="middle" fill="#60A5FA" font-size="9" font-weight="900">60K</text>
+              <text x="118" y="94" text-anchor="middle" fill="#FBBF24" font-size="6" font-weight="800">GALAXY</text>
+              <circle cx="118" cy="112" r="3" fill="#22C55E"/>
+            </svg>
+          `;
+
+        case 'avotx-space-40k':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(225,29,72,0.28)]">
+              <defs>
+                <linearGradient id="avotxBody" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#E11D48"/>
+                  <stop offset="100%" stop-color="#881337"/>
+                </linearGradient>
+              </defs>
+              <rect x="98" y="18" width="24" height="16" rx="4" fill="#18181B"/>
+              <rect x="78" y="32" width="64" height="108" rx="16" fill="url(#avotxBody)" stroke="#FDA4AF" stroke-width="1.2"/>
+              <!-- CleanTank Window -->
+              <circle cx="110" cy="68" r="17" fill="#18181B" stroke="#FDA4AF" stroke-width="2.5"/>
+              <circle cx="110" cy="68" r="11" fill="#FB7185" opacity="0.45"/>
+              <text x="110" y="102" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900" letter-spacing="1">AVOTX</text>
+              <!-- Bottom Digital Screen -->
+              <rect x="92" y="112" width="36" height="18" rx="5" fill="#09090B" stroke="#D4AF37" stroke-width="0.9"/>
+              <text x="110" y="124" text-anchor="middle" fill="#FBBF24" font-size="8" font-weight="800">40K</text>
+            </svg>
+          `;
+
+        case 'bodysplash-vs':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(212,175,55,0.28)]">
+              <defs>
+                <linearGradient id="vsCap" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#B88E1E"/>
+                  <stop offset="50%" stop-color="#F8E08E"/>
+                  <stop offset="100%" stop-color="#A6831E"/>
+                </linearGradient>
+                <linearGradient id="vsBottle" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.72"/>
+                  <stop offset="50%" stop-color="#D97706" stop-opacity="0.48"/>
+                  <stop offset="100%" stop-color="#92400E" stop-opacity="0.75"/>
+                </linearGradient>
+              </defs>
+              <!-- Gold Cap -->
+              <rect x="95" y="16" width="30" height="24" rx="4" fill="url(#vsCap)"/>
+              <rect x="93" y="40" width="34" height="6" rx="2" fill="#18181B"/>
+              <!-- Fluted Glass Bottle -->
+              <rect x="82" y="46" width="56" height="98" rx="14" fill="url(#vsBottle)" stroke="#FDE68A" stroke-width="1.2"/>
+              <!-- Front Label -->
+              <rect x="90" y="64" width="40" height="46" rx="4" fill="#F5D0A9" stroke="#D4AF37" stroke-width="1"/>
+              <text x="110" y="80" text-anchor="middle" fill="#18181B" font-size="5.5" font-weight="800" letter-spacing="0.6">VICTORIA'S</text>
+              <text x="110" y="87" text-anchor="middle" fill="#18181B" font-size="5.5" font-weight="800" letter-spacing="0.6">SECRET</text>
+              <text x="110" y="100" text-anchor="middle" fill="#78350F" font-size="5.5" font-style="italic" font-weight="700">250 ml</text>
+            </svg>
+          `;
+
+        case 'cremas-vs':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(212,175,55,0.25)]">
+              <!-- Left Tube (Aqua Kiss) -->
+              <g transform="rotate(-10 76 85)">
+                <polygon points="58,28 94,28 88,116 64,116" fill="#7DD3FC" stroke="#BAE6FD" stroke-width="1"/>
+                <rect x="65" y="116" width="22" height="14" rx="3" fill="#D4AF37"/>
+              </g>
+              <!-- Right Tube (Romantic) -->
+              <g transform="rotate(10 144 85)">
+                <polygon points="126,28 162,28 156,116 132,116" fill="#E11D48" stroke="#FDA4AF" stroke-width="1"/>
+                <rect x="133" y="116" width="22" height="14" rx="3" fill="#D4AF37"/>
+              </g>
+              <!-- Center Gold Tube -->
+              <polygon points="90,22 130,22 123,120 97,120" fill="#D4AF37" stroke="#FEF08A" stroke-width="1.2"/>
+              <rect x="98" y="120" width="24" height="16" rx="3" fill="#F8E08E"/>
+              <text x="110" y="64" text-anchor="middle" fill="#18181B" font-size="5.5" font-weight="800">VICTORIA'S</text>
+              <text x="110" y="71" text-anchor="middle" fill="#18181B" font-size="5.5" font-weight="800">SECRET</text>
+              <text x="110" y="88" text-anchor="middle" fill="#422006" font-size="5" font-weight="700">236 mL</text>
+            </svg>
+          `;
+
+        case 'cremas-karseell':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(0,0,0,0.85)]">
+              <!-- Brown Cap -->
+              <rect x="66" y="28" width="88" height="22" rx="7" fill="#5C4033" stroke="#8D6E63" stroke-width="1"/>
+              <!-- Cream Jar Body -->
+              <rect x="64" y="48" width="92" height="86" rx="14" fill="#F5F0E6" stroke="#E7E0D2" stroke-width="1.2"/>
+              <!-- Burgundy & Gold Label -->
+              <rect x="64" y="56" width="54" height="44" fill="#7F1D1D"/>
+              <rect x="118" y="56" width="38" height="44" fill="#EAB308"/>
+              <text x="91" y="76" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="800">Karseell</text>
+              <text x="137" y="83" text-anchor="middle" fill="#18181B" font-size="6.5" font-weight="800">Collagen</text>
+              <text x="110" y="118" text-anchor="middle" fill="#57534E" font-size="7" font-weight="700">500ml · MACA POWER</text>
+            </svg>
+          `;
+
+        case 'stanley-quencher-12l': {
+          const swatchMap = {
+            'Durazno': '#F4B8B0',
+            'Lila Pastel': '#C9BECF',
+            'Gris Grafito': '#61656B',
+            'Fucsia': '#F45D98',
+            'Celeste': '#A5CBE6',
+            'Naranja': '#F07838',
+            'Negro': '#1F1F23',
+            'Azul Marino': '#1E2D42',
+            'Verde Lima': '#98C945',
+            'Violeta': '#9469B8'
+          };
+          const tumblerColor = swatchMap[variant] || '#F4B8B0';
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(0,0,0,0.85)]">
+              <!-- Straw -->
+              <rect x="108" y="10" width="5" height="24" rx="2" fill="#E4E4E7" opacity="0.85"/>
+              <!-- Lid & Steel Rim -->
+              <rect x="82" y="30" width="56" height="8" rx="3" fill="#D4D4D8" opacity="0.75"/>
+              <rect x="83" y="38" width="54" height="5" fill="#E4E4E7"/>
+              <!-- Comfort Handle -->
+              <path d="M136 52 H152 V92 H134" fill="none" stroke="${tumblerColor}" stroke-width="8" stroke-linejoin="round"/>
+              <!-- Upper Tumbler Body -->
+              <path d="M84 43 H136 L131 98 H89 Z" fill="${tumblerColor}" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+              <!-- Lower Cup Holder Taper -->
+              <path d="M91 98 H129 L125 142 H95 Z" fill="${tumblerColor}" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <text x="110" y="75" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="6.5" font-weight="800" letter-spacing="1.2">1.2L</text>
+            </svg>
+          `;
+        }
+
+        case 'medias-nike-drifit':
+          return `
+            <svg viewBox="0 0 220 160" class="w-full h-full max-h-40 drop-shadow-[0_14px_24px_rgba(0,0,0,0.85)]">
+              <!-- Back Black Sock -->
+              <rect x="66" y="24" width="32" height="112" rx="12" fill="#18181B" stroke="#3F3F46" stroke-width="1"/>
+              <!-- Middle Gray Sock -->
+              <rect x="94" y="22" width="32" height="116" rx="12" fill="#9CA3AF"/>
+              <!-- Front White Sock -->
+              <rect x="122" y="20" width="32" height="120" rx="12" fill="#FAFAFA"/>
+              <!-- Nike Wrapper Band -->
+              <rect x="62" y="64" width="96" height="34" rx="4" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+              <path d="M100 76 c4 5 12 3 22 -3 c-9 7 -18 10 -24 6 c-2 -1 -1 -3 2 -3 z" fill="#18181B"/>
+              <text x="110" y="92" text-anchor="middle" fill="#18181B" font-size="6.5" font-weight="800" letter-spacing="0.8">DRI-FIT · x3</text>
+            </svg>
+          `;
+
+        default:
+          return '';
+      }
+    }
+
+    // ================= SMART WHOLESALE ASSORTED ENGINE =================
+    /**
+     * Computes aggregated quantities and active pricing tier for a given productId
+     * across ALL variants (aromas/flavors/colors) currently in the cart.
+     */
+    function getProductCartMetrics(productId) {
+      const product = getProductById(productId);
+      if (!product) return null;
+
+      if (product.isSocksSpecial) {
+        // Separate 'pack' items from 'dozen' items so assorted dozens combine cleanly
+        const dozenItems = state.cart.filter(i => i.productId === productId && i.unitMode === 'dozen');
+        const packItems = state.cart.filter(i => i.productId === productId && i.unitMode === 'pack');
+        const totalDozens = dozenItems.reduce((sum, item) => sum + item.qty, 0);
+
+        const dozenTiers = product.tiers.filter(t => !t.isPack);
+        let activeDozenTier = dozenTiers[0];
+        let nextDozenTier = null;
+
+        for (let i = 0; i < dozenTiers.length; i++) {
+          if (totalDozens >= dozenTiers[i].min) {
+            activeDozenTier = dozenTiers[i];
+            nextDozenTier = dozenTiers[i + 1] || null;
+          }
+        }
+
+        const packTier = product.tiers.find(t => t.isPack);
+
+        return {
+          isSocksSpecial: true,
+          totalDozens,
+          activeDozenTier,
+          nextDozenTier,
+          missingForNextDozen: nextDozenTier ? (nextDozenTier.min - totalDozens) : 0,
+          packTier,
+          hasDozens: dozenItems.length > 0,
+          hasPacks: packItems.length > 0
+        };
+      }
+
+      const matchingItems = state.cart.filter(i => i.productId === productId);
+      const totalQty = matchingItems.reduce((sum, item) => sum + item.qty, 0);
+
+      let activeTier = product.tiers[0];
+      let nextTier = null;
+
+      for (let i = 0; i < product.tiers.length; i++) {
+        if (totalQty >= product.tiers[i].min) {
+          activeTier = product.tiers[i];
+          nextTier = product.tiers[i + 1] || null;
+        }
+      }
+
+      // If cart has 0 of this product, nextTier from 0 is the first wholesale jump (index 1)
+      if (totalQty === 0 && product.tiers.length > 1) {
+        nextTier = product.tiers[1];
+      }
+
+      const isWholesaleApplied = totalQty >= (product.tiers[1]?.min || 999999) || (product.minQty >= 10 && totalQty >= 10);
+
+      return {
+        isSocksSpecial: false,
+        totalQty,
+        activeTier,
+        nextTier,
+        missingForNext: nextTier ? Math.max(0, nextTier.min - totalQty) : 0,
+        isWholesaleApplied
+      };
+    }
+
+    // ================= HEADER & FILTER HANDLERS =================
+    function renderCategoryBar() {
+      const bar = document.getElementById('categoryBar');
+      if (!bar) return;
+
+      bar.innerHTML = CATEGORIES.map(cat => {
+        const active = state.selectedCategory === cat;
+        return `
+          <button
+            onclick="selectCategory('${cat.replace(/'/g, "\\'")}')"
+            class="shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border ${
+              active
+                ? 'bg-gold-gradient text-obsidian border-transparent shadow-gold-glow'
+                : 'bg-surface text-zinc-300 border-zinc-800 hover:border-zinc-700 hover:text-white'
+            }"
+          >
+            ${cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectCategory(category) {
+      state.selectedCategory = category;
+      renderCategoryBar();
+      renderCatalog();
+    }
+
+    function handleSearch(value) {
+      state.searchQuery = value.trim();
+      const dInput = document.getElementById('searchInputDesktop');
+      const mInput = document.getElementById('searchInputMobile');
+      if (dInput && dInput.value !== value) dInput.value = value;
+      if (mInput && mInput.value !== value) mInput.value = value;
+
+      const showClear = state.searchQuery.length > 0;
+      document.getElementById('clearSearchDesktop')?.classList.toggle('hidden', !showClear);
+      document.getElementById('clearSearchMobile')?.classList.toggle('hidden', !showClear);
+
+      renderCatalog();
+    }
+
+    function clearSearch() {
+      handleSearch('');
+    }
+
+    function resetFilters(event) {
+      if (event) event.preventDefault();
+      state.selectedCategory = 'Todos';
+      state.specialBadgeFilter = '';
+      handleSearch('');
+      renderCategoryBar();
+      renderCatalog();
+    }
+
+    function updateUsdRate(val) {
+      const parsed = parseFloat(val);
+      if (!isNaN(parsed) && parsed > 0) {
+        state.usdRate = parsed;
+        try {
+          localStorage.setItem(STORAGE_KEYS.USD_RATE, String(parsed));
+        } catch (e) {}
+        renderCatalog();
+        renderCart();
+        if (state.activeModalProductId) {
+          renderProductModal(state.activeModalProductId);
+        }
+      }
+    }
+
+    function toggleArsEquivalents() {
+      state.showArsEq = !state.showArsEq;
+      try {
+        localStorage.setItem(STORAGE_KEYS.SHOW_ARS_EQ, String(state.showArsEq));
+      } catch (e) {}
+      updateArsToggleBtnUI();
+      renderCatalog();
+      renderCart();
+      if (state.activeModalProductId) {
+        renderProductModal(state.activeModalProductId);
+      }
+    }
+
+    function updateArsToggleBtnUI() {
+      const btn = document.getElementById('toggleArsEqBtn');
+      if (!btn) return;
+      btn.className = state.showArsEq
+        ? 'px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide border transition-colors bg-gold/20 text-gold border-gold/40'
+        : 'px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide border transition-colors bg-elevated text-zinc-400 border-zinc-700 hover:text-white';
+    }
+
+    // ================= CATALOG RENDERING =================
+    function getFilteredProducts() {
+      const q = state.searchQuery.toLowerCase();
+      return getProducts().filter(p => {
+        if (state.selectedCategory !== 'Todos' && p.category !== state.selectedCategory) {
+          return false;
+        }
+        if (state.specialBadgeFilter && !p.badge.includes(state.specialBadgeFilter)) {
+          return false;
+        }
+        if (q) {
+          const haystack = [
+            p.name,
+            p.category,
+            p.badge,
+            ...p.variants
+          ].join(' ').toLowerCase();
+          return haystack.includes(q);
+        }
+        return true;
+      });
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('productGrid');
+      const emptyState = document.getElementById('emptyState');
+      const heading = document.getElementById('catalogHeading');
+      const countBadge = document.getElementById('productCountBadge');
+      const activePills = document.getElementById('activeFilterPills');
+
+      const filtered = getFilteredProducts();
+
+      heading.textContent = state.selectedCategory === 'Todos' ? 'Todos los productos' : state.selectedCategory;
+      countBadge.textContent = `${filtered.length} ${filtered.length === 1 ? 'producto' : 'productos'}`;
+
+      // Render active filter pills
+      const pills = [];
+      if (state.searchQuery) {
+        pills.push(`
+          <button onclick="clearSearch()" class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg bg-surface text-zinc-300 border border-zinc-700">
+            "${state.searchQuery}" ✕
+          </button>
+        `);
+      }
+      activePills.innerHTML = pills.join('');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(product => buildProductCardHTML(product)).join('');
+    }
+
+    function buildProductCardHTML(product) {
+      const selectedVariant = state.selectedVariants[product.id] || product.variants[0];
+      const currentQty = state.selectedQuantities[product.id] || product.minQty || 1;
+      const socksMode = state.socksOrderMode[product.id] || 'pack';
+      const cartMetrics = getProductCartMetrics(product.id);
+
+      // Determine active preview tier on the card based on currentQty
+      let previewTier = product.tiers[0];
+      if (product.isSocksSpecial) {
+        if (socksMode === 'pack') {
+          previewTier = product.tiers.find(t => t.isPack);
+        } else {
+          const dozenTiers = product.tiers.filter(t => !t.isPack);
+          previewTier = dozenTiers[0];
+          for (const t of dozenTiers) {
+            if (currentQty >= t.min) previewTier = t;
+          }
+        }
+      } else {
+        for (const t of product.tiers) {
+          if (currentQty >= t.min) previewTier = t;
+        }
+      }
+
+      // Badge styling
+      let badgeHTML = '';
+      if (product.badge) {
+        const isNew = product.badge.includes('NUEVO');
+        const badgeStyle = isNew
+          ? 'bg-emerald-500/25 text-emerald-300 border-emerald-400/50'
+          : 'bg-amber-500/25 text-gold-light border-gold/50';
+        badgeHTML = `
+          <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg text-[10px] font-extrabold tracking-wider uppercase border backdrop-blur-md ${badgeStyle}">
+            ${product.badge}
+          </span>
+        `;
+      }
+
+      // Live Assorted Cart Progress Banner on Product Card
+      let inCartPill = '';
+      let assortedProgressHTML = '';
+      if (cartMetrics) {
+        if (product.isSocksSpecial) {
+          if (cartMetrics.hasPacks || cartMetrics.hasDozens) {
+            inCartPill = `
+              <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-obsidian/90 text-gold border border-gold/40 backdrop-blur-md">
+                En carrito ✓
+              </span>
+            `;
+          }
+          if (cartMetrics.hasDozens) {
+            assortedProgressHTML = `
+              <div class="px-2.5 py-1.5 rounded-xl bg-gold/10 border border-gold/30 text-[11px] text-gold-light font-semibold flex items-center justify-between gap-2">
+                <span>En carrito: <strong>${cartMetrics.totalDozens} doc.</strong> (${formatARS(cartMetrics.activeDozenTier.price)} c/doc)</span>
+                ${cartMetrics.nextDozenTier ? `<span class="text-[10px] text-zinc-300">+${cartMetrics.missingForNextDozen} doc → ${formatARS(cartMetrics.nextDozenTier.price)}</span>` : ''}
+              </div>
+            `;
+          }
+        } else if (cartMetrics.totalQty > 0) {
+          inCartPill = `
+            <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-obsidian/90 text-gold border border-gold/40 tabular-nums backdrop-blur-md">
+              ${cartMetrics.totalQty} unid. en carrito
+            </span>
+          `;
+
+          const activePriceStr = cartMetrics.activeTier.currency === 'ARS'
+            ? formatARS(cartMetrics.activeTier.price)
+            : `${formatUSD(cartMetrics.activeTier.price)} c/u`;
+
+          if (cartMetrics.nextTier) {
+            const nextPriceStr = cartMetrics.nextTier.currency === 'ARS'
+              ? formatARS(cartMetrics.nextTier.price)
+              : `${formatUSD(cartMetrics.nextTier.price)} c/u`;
+            assortedProgressHTML = `
+              <div class="px-2.5 py-1.5 rounded-xl bg-gold/10 border border-gold/30 text-[11px] text-gold-light leading-snug">
+                En carrito: <strong>${cartMetrics.totalQty} unid. surtidas</strong> (${activePriceStr}) · Agregá <strong>${cartMetrics.missingForNext} más</strong> para precio x${cartMetrics.nextTier.min} (<strong>${nextPriceStr}</strong>)
+              </div>
+            `;
+          } else {
+            assortedProgressHTML = `
+              <div class="px-2.5 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-400/35 text-[11px] text-emerald-300 font-semibold">
+                ✨ En carrito: ${cartMetrics.totalQty} unid. surtidas · Escala máxima activa (${activePriceStr})
+              </div>
+            `;
+          }
+        }
+      }
+
+      // Variant selector HTML (only shown when product actually has selectable flavors/aromas/colors)
+      const hasMultipleVariants = product.variants.length > 1;
+      let variantSectionHTML = '';
+      if (hasMultipleVariants) {
+        variantSectionHTML = `
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-[11px]">
+              <span class="text-zinc-400 font-semibold uppercase tracking-wider">${product.variantLabel}:</span>
+              <span class="text-gold font-bold truncate max-w-[185px]">${selectedVariant}</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-0.5">
+              ${product.variants.map(v => {
+                const isSel = v === selectedVariant;
+                const swatch = product.swatches ? product.swatches[v] : null;
+                const swatchDot = swatch
+                  ? `<span class="w-3 h-3 rounded-full border border-white/30 shrink-0" style="background: ${swatch};"></span>`
+                  : '';
+                return `
+                  <button
+                    type="button"
+                    onclick="selectCardVariant('${product.id}', '${v.replace(/'/g, "\\'")}')"
+                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition-all ${
+                      isSel
+                        ? 'bg-gold/20 text-gold-light border-gold shadow-xs'
+                        : 'bg-obsidian/80 text-zinc-300 border-zinc-800 hover:border-zinc-600 hover:text-white'
+                    }"
+                  >
+                    ${swatchDot}
+                    <span>${v}</span>
+                  </button>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      // Interactive Tiered Pricing Grid
+      const tiersHTML = `
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between text-[10px] uppercase tracking-wider text-zinc-400 font-semibold">
+            <span>Escalas (clic para elegir)</span>
+            <span class="text-gold">Mayorista Surtido</span>
+          </div>
+          <div class="grid grid-cols-2 gap-1.5">
+            ${product.tiers.map(tier => {
+              const isSelectedTier = previewTier && previewTier.label === tier.label;
+              const priceText = tier.currency === 'ARS'
+                ? `${formatARS(tier.price)}${tier.min >= 3 && product.isSocksSpecial ? ' c/doc' : ''}`
+                : `${formatUSD(tier.price)} c/u`;
+              const arsSub = (tier.currency === 'USD' && state.showArsEq)
+                ? `<div class="text-[9px] text-zinc-400 font-normal leading-tight">≈ ${formatARS(tier.price * state.usdRate)}</div>`
+                : '';
+              return `
+                <button
+                  type="button"
+                  onclick="selectCardTier('${product.id}', ${tier.min}, ${Boolean(tier.isPack)})"
+                  class="flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-left transition-all tabular-nums ${
+                    isSelectedTier
+                      ? 'bg-gold/15 border-gold text-white'
+                      : 'bg-obsidian/75 border-zinc-800/90 text-zinc-300 hover:border-zinc-600'
+                  }"
+                >
+                  <span class="text-[11px] font-bold ${isSelectedTier ? 'text-gold' : 'text-zinc-400'}">${tier.label}</span>
+                  <div class="text-right">
+                    <div class="text-[11px] font-extrabold ${isSelectedTier ? 'text-white' : 'text-zinc-200'}">${priceText}</div>
+                    ${arsSub}
+                  </div>
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+
+      // Socks mode switch or standard quantity stepper
+      let qtyControlsHTML = '';
+      if (product.isSocksSpecial) {
+        qtyControlsHTML = `
+          <div class="space-y-2 pt-1">
+            <div class="grid grid-cols-2 gap-1.5 bg-obsidian p-1 rounded-xl border border-zinc-800">
+              <button
+                type="button"
+                onclick="setSocksMode('${product.id}', 'pack')"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-bold transition-colors ${
+                  socksMode === 'pack' ? 'bg-gold text-obsidian' : 'text-zinc-400 hover:text-white'
+                }"
+              >
+                Pack x3 pares
+              </button>
+              <button
+                type="button"
+                onclick="setSocksMode('${product.id}', 'dozen')"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-bold transition-colors ${
+                  socksMode === 'dozen' ? 'bg-gold text-obsidian' : 'text-zinc-400 hover:text-white'
+                }"
+              >
+                Por Docena (12p)
+              </button>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex items-center bg-obsidian border border-zinc-800 rounded-xl overflow-hidden">
+                <button type="button" onclick="stepCardQty('${product.id}', -1)" class="w-9 h-10 flex items-center justify-center text-zinc-300 hover:text-gold hover:bg-elevated font-bold">−</button>
+                <input
+                  type="number"
+                  min="1"
+                  value="${currentQty}"
+                  onchange="setCardQty('${product.id}', this.value)"
+                  class="w-11 h-10 text-center bg-transparent text-sm font-bold text-white tabular-nums focus:outline-none"
+                  aria-label="Cantidad"
+                />
+                <button type="button" onclick="stepCardQty('${product.id}', 1)" class="w-9 h-10 flex items-center justify-center text-zinc-300 hover:text-gold hover:bg-elevated font-bold">+</button>
+              </div>
+              <button
+                type="button"
+                onclick="addToCartFromCard('${product.id}')"
+                class="flex-1 h-10 px-3 rounded-xl bg-gold-gradient text-obsidian font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-gold-glow active:scale-95 transition-transform"
+              >
+                <span>Agregar ${currentQty} ${socksMode === 'pack' ? (currentQty === 1 ? 'pack' : 'packs') : (currentQty === 1 ? 'doc.' : 'doc.')}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      } else {
+        qtyControlsHTML = `
+          <div class="flex items-center gap-2 pt-1">
+            <div class="flex items-center bg-obsidian border border-zinc-800 rounded-xl overflow-hidden">
+              <button type="button" onclick="stepCardQty('${product.id}', -1)" class="w-9 h-10 flex items-center justify-center text-zinc-300 hover:text-gold hover:bg-elevated font-bold">−</button>
+              <input
+                type="number"
+                min="${product.minQty}"
+                value="${currentQty}"
+                onchange="setCardQty('${product.id}', this.value)"
+                class="w-12 h-10 text-center bg-transparent text-sm font-bold text-white tabular-nums focus:outline-none"
+                aria-label="Cantidad"
+              />
+              <button type="button" onclick="stepCardQty('${product.id}', 1)" class="w-9 h-10 flex items-center justify-center text-zinc-300 hover:text-gold hover:bg-elevated font-bold">+</button>
+            </div>
+            <button
+              type="button"
+              onclick="addToCartFromCard('${product.id}')"
+              class="flex-1 h-10 px-3 rounded-xl bg-gold-gradient text-obsidian font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-gold-glow active:scale-95 transition-transform"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              <span>Agregar (${currentQty} u.)</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <article class="product-card group rounded-2xl border p-4 flex flex-col justify-between gap-3.5">
+          <div class="space-y-3">
+            <!-- Visual Area (Clickable for assortment / detail modal) -->
+            <div class="relative cursor-pointer" onclick="openProductModal('${product.id}')">
+              ${badgeHTML}
+              ${inCartPill}
+              ${getProductArtworkHTML(product, selectedVariant, 'h-56 sm:h-60')}
+              <span class="absolute bottom-2.5 right-2.5 z-10 px-2.5 py-1 rounded-lg bg-obsidian/90 border border-gold/35 text-[10px] font-bold text-gold backdrop-blur-md">
+                ${hasMultipleVariants ? 'Armar Surtido ↗' : 'Ver Escalas ↗'}
+              </span>
+            </div>
+
+            <!-- Category & Clean Product Name Only -->
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gold">${product.category}</span>
+                ${product.minQty > 1 ? `<span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-md">Mín. ${product.minQty} u.</span>` : ''}
+              </div>
+              <h3
+                onclick="openProductModal('${product.id}')"
+                class="text-base sm:text-lg font-extrabold text-white mt-1 leading-snug cursor-pointer hover:text-gold transition-colors"
+              >
+                ${product.name}
+              </h3>
+            </div>
+
+            <!-- Live Assorted Cart Status (when units exist in cart) -->
+            ${assortedProgressHTML}
+
+            <!-- Variant Chips (Aromas / Sabores / Colores) -->
+            ${variantSectionHTML}
+
+            <!-- Tiered Pricing Grid -->
+            ${tiersHTML}
+          </div>
+
+          <!-- Bottom Quantity & Add CTA -->
+          <div class="pt-2.5 border-t border-[#24242C] space-y-2">
+            ${qtyControlsHTML}
+            ${hasMultipleVariants ? `
+              <button
+                type="button"
+                onclick="openProductModal('${product.id}')"
+                class="w-full py-2 px-3 rounded-xl bg-obsidian hover:bg-elevated border border-gold/30 text-[11px] font-bold text-gold-light flex items-center justify-center gap-1.5 transition-colors"
+              >
+                <span>Armar Surtido Combinado (${product.variants.length} opciones)</span>
+              </button>
+            ` : ''}
+          </div>
+        </article>
+      `;
+    }
+
+    // ================= CARD & MODAL INTERACTIONS =================
+    function selectCardVariant(productId, variant) {
+      state.selectedVariants[productId] = variant;
+      renderCatalog();
+      if (state.activeModalProductId === productId) {
+        renderProductModal(productId);
+      }
+    }
+
+    function selectCardTier(productId, minQty, isPack = false) {
+      const product = getProductById(productId);
+      if (!product) return;
+
+      if (product.isSocksSpecial) {
+        if (isPack) {
+          state.socksOrderMode[productId] = 'pack';
+          state.selectedQuantities[productId] = 1;
+        } else {
+          state.socksOrderMode[productId] = 'dozen';
+          state.selectedQuantities[productId] = Math.max(1, minQty);
+        }
+      } else {
+        state.selectedQuantities[productId] = Math.max(product.minQty || 1, minQty);
+      }
+
+      renderCatalog();
+      if (state.activeModalProductId === productId) {
+        renderProductModal(productId);
+      }
+    }
+
+    function setSocksMode(productId, mode) {
+      state.socksOrderMode[productId] = mode;
+      state.selectedQuantities[productId] = 1;
+      renderCatalog();
+      if (state.activeModalProductId === productId) {
+        renderProductModal(productId);
+      }
+    }
+
+    function stepCardQty(productId, delta) {
+      const product = getProductById(productId);
+      if (!product) return;
+      const minAllowed = product.isSocksSpecial ? 1 : (product.minQty || 1);
+      const current = state.selectedQuantities[productId] || minAllowed;
+      const next = Math.max(minAllowed, current + delta);
+      state.selectedQuantities[productId] = next;
+      renderCatalog();
+      if (state.activeModalProductId === productId) {
+        renderProductModal(productId);
+      }
+    }
+
+    function setCardQty(productId, rawVal) {
+      const product = getProductById(productId);
+      if (!product) return;
+      const minAllowed = product.isSocksSpecial ? 1 : (product.minQty || 1);
+      const parsed = parseInt(rawVal, 10);
+      state.selectedQuantities[productId] = (!isNaN(parsed) && parsed >= minAllowed) ? parsed : minAllowed;
+      renderCatalog();
+      if (state.activeModalProductId === productId) {
+        renderProductModal(productId);
+      }
+    }
+
+    function addToCartFromCard(productId) {
+      const product = getProductById(productId);
+      if (!product) return;
+
+      const variant = state.selectedVariants[productId] || product.variants[0] || 'Estándar';
+      const minAllowed = product.isSocksSpecial ? 1 : (product.minQty || 1);
+      const qty = Math.max(minAllowed, state.selectedQuantities[productId] || minAllowed);
+      const unitMode = product.isSocksSpecial ? (state.socksOrderMode[productId] || 'pack') : 'unit';
+
+      const cartKey = `${productId}::${variant}::${unitMode}`;
+      const existing = state.cart.find(item => item.key === cartKey);
+
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        state.cart.push({
+          key: cartKey,
+          productId,
+          variant,
+          qty,
+          unitMode
+        });
+      }
+
+      saveCart();
+      renderCatalog();
+      renderCart();
+      if (state.activeModalProductId === productId) {
+        renderProductModal(productId);
+      }
+
+      const metrics = getProductCartMetrics(productId);
+      let toastMsg = `Agregado: ${qty}× ${product.name} (${variant})`;
+      if (metrics && !metrics.isSocksSpecial && metrics.isWholesaleApplied) {
+        toastMsg += ` · ¡Escala ${metrics.activeTier.label} activa!`;
+      }
+      showToast(toastMsg, 'gold');
+    }
+
+    // ================= SLIDE-OVER CART & WHOLESALE SUMMARY =================
+    function openCart() {
+      renderCart();
+      document.getElementById('cartDrawerBackdrop').classList.remove('hidden');
+      document.getElementById('cartDrawer').classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawerBackdrop').classList.add('hidden');
+      document.getElementById('cartDrawer').classList.add('translate-x-full');
+      document.body.style.overflow = '';
+    }
+
+    function updateCartItemQty(key, delta) {
+      const idx = state.cart.findIndex(i => i.key === key);
+      if (idx === -1) return;
+
+      const item = state.cart[idx];
+      const product = getProductById(item.productId);
+      const nextQty = item.qty + delta;
+
+      if (nextQty <= 0) {
+        state.cart.splice(idx, 1);
+      } else {
+        // Check wholesale minimum if only 1 variant of a minQty>1 product
+        item.qty = nextQty;
+      }
+
+      // Enforce product-level minimum if product is still in cart
+      if (product && product.minQty > 1) {
+        const totalRemaining = state.cart
+          .filter(i => i.productId === product.id)
+          .reduce((s, i) => s + i.qty, 0);
+        if (totalRemaining > 0 && totalRemaining < product.minQty) {
+          showToast(`${product.name} requiere mínimo ${product.minQty} unidades en total.`, 'error');
+        }
+      }
+
+      saveCart();
+      renderCatalog();
+      renderCart();
+    }
+
+    function removeCartItem(key) {
+      state.cart = state.cart.filter(i => i.key !== key);
+      saveCart();
+      renderCatalog();
+      renderCart();
+    }
+
+    function clearCart() {
+      state.cart = [];
+      saveCart();
+      renderCatalog();
+      renderCart();
+      showToast('Carrito vaciado.', 'gold');
+    }
+
+    function renderCart() {
+      const badge = document.getElementById('cartBadge');
+      const container = document.getElementById('cartItemsContainer');
+      const footer = document.getElementById('cartFooter');
+
+      const totalCount = state.cart.reduce((sum, item) => sum + item.qty, 0);
+      if (badge) badge.textContent = totalCount;
+
+      if (state.cart.length === 0) {
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center py-12 px-4">
+            <div class="w-14 h-14 rounded-2xl bg-surface border border-zinc-800 flex items-center justify-center text-zinc-500 mb-3">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </div>
+            <h3 class="text-base font-bold text-white">Tu carrito está vacío</h3>
+            <p class="text-xs text-zinc-400 mt-1 max-w-xs">Agregá productos del catálogo y combiná sabores o aromas para activar precios mayoristas automáticamente.</p>
+            <button onclick="closeCart()" class="mt-5 px-4 py-2.5 rounded-xl bg-gold-gradient text-obsidian text-xs font-extrabold">
+              Explorar Catálogo
+            </button>
+          </div>
+        `;
+        footer.innerHTML = '';
+        footer.classList.add('hidden');
+        return;
+      }
+
+      footer.classList.remove('hidden');
+
+      // Group cart items by productId so assorted wholesale tiers are crystal clear
+      const groupedIds = [...new Set(state.cart.map(i => i.productId))];
+      let totalARS = 0;
+      let totalUSD = 0;
+      let hasBelowMinWarning = false;
+
+      const groupsHTML = groupedIds.map(productId => {
+        const product = getProductById(productId);
+        if (!product) return '';
+
+        const items = state.cart.filter(i => i.productId === productId);
+        const metrics = getProductCartMetrics(productId);
+
+        let wholesaleBannerHTML = '';
+
+        if (product.isSocksSpecial) {
+          if (metrics.hasDozens) {
+            const tier = metrics.activeDozenTier;
+            const next = metrics.nextDozenTier;
+            wholesaleBannerHTML = `
+              <div class="px-3 py-2 rounded-xl bg-gold/10 border border-gold/30 text-[11px] space-y-0.5">
+                <div class="font-bold text-gold-light">
+                  ✨ Escala Docenas: ${metrics.totalDozens} doc. total (${formatARS(tier.price)} c/ docena)
+                </div>
+                ${next ? `<div class="text-zinc-300">Sumá <strong>${metrics.missingForNextDozen} doc.</strong> más (cualquier color) para bajar a <strong>${formatARS(next.price)} c/ doc.</strong></div>` : `<div class="text-emerald-400 font-semibold">¡Escala máxima mayorista alcanzada!</div>`}
+              </div>
+            `;
+          }
+        } else {
+          if (product.minQty > 1 && metrics.totalQty < product.minQty) {
+            hasBelowMinWarning = true;
+            wholesaleBannerHTML = `
+              <div class="px-3 py-2 rounded-xl bg-red-500/15 border border-red-500/40 text-[11px] text-red-300 font-semibold">
+                ⚠️ Faltan ${product.minQty - metrics.totalQty} u. para alcanzar el mínimo mayorista de ${product.minQty} unidades.
+              </div>
+            `;
+          } else if (metrics.isWholesaleApplied) {
+            const unitLabel = metrics.activeTier.currency === 'ARS'
+              ? `${formatARS(metrics.activeTier.price)} c/u`
+              : `${formatUSD(metrics.activeTier.price)} c/u`;
+            wholesaleBannerHTML = `
+              <div class="px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-[11px] space-y-0.5">
+                <div class="font-bold text-emerald-300">
+                  ✨ ¡Escala mayorista de ${metrics.activeTier.min}+ u. aplicada! (${unitLabel})
+                </div>
+                ${metrics.nextTier ? `<div class="text-zinc-300">Agregá <strong>${metrics.missingForNext} u.</strong> más de este producto para bajar a <strong>${metrics.nextTier.currency === 'ARS' ? formatARS(metrics.nextTier.price) : formatUSD(metrics.nextTier.price)} c/u</strong></div>` : `<div class="text-gold font-semibold">¡Mejor escala mayorista desbloqueada!</div>`}
+              </div>
+            `;
+          } else if (metrics.nextTier) {
+            const nextPriceStr = metrics.nextTier.currency === 'ARS'
+              ? `${formatARS(metrics.nextTier.price)} c/u`
+              : `${formatUSD(metrics.nextTier.price)} c/u`;
+            wholesaleBannerHTML = `
+              <div class="px-3 py-2 rounded-xl bg-surface border border-zinc-800 text-[11px] text-zinc-300">
+                Tenés <strong>${metrics.totalQty} u.</strong> · Sumá <strong>${metrics.missingForNext} u.</strong> más (cualquier aroma/color) para activar precio mayorista de <strong class="text-gold">${nextPriceStr}</strong>.
+              </div>
+            `;
+          }
+        }
+
+        const linesHTML = items.map(item => {
+          let unitPrice = 0;
+          let currency = 'ARS';
+          let unitSuffix = 'u.';
+
+          if (product.isSocksSpecial) {
+            if (item.unitMode === 'pack') {
+              unitPrice = metrics.packTier.price;
+              currency = 'ARS';
+              unitSuffix = item.qty === 1 ? 'pack (3 pares)' : 'packs (3 pares)';
+            } else {
+              unitPrice = metrics.activeDozenTier.price;
+              currency = 'ARS';
+              unitSuffix = item.qty === 1 ? 'docena' : 'docenas';
+            }
+          } else {
+            unitPrice = metrics.activeTier.price;
+            currency = metrics.activeTier.currency;
+          }
+
+          const lineSubtotal = unitPrice * item.qty;
+          if (currency === 'ARS') totalARS += lineSubtotal;
+          if (currency === 'USD') totalUSD += lineSubtotal;
+
+          const lineSubtotalFormatted = currency === 'ARS'
+            ? formatARS(lineSubtotal)
+            : formatUSD(lineSubtotal);
+
+          const unitPriceFormatted = currency === 'ARS'
+            ? `${formatARS(unitPrice)} c/u`
+            : `${formatUSD(unitPrice)} c/u`;
+
+          const displayLineTitle = product.isSocksSpecial
+            ? (item.unitMode === 'pack' ? 'Pack x3 pares' : 'Por Docena (12 pares)')
+            : (product.variants.length > 1 ? item.variant : 'Cantidad seleccionada');
+
+          return `
+            <div class="flex items-center justify-between gap-2.5 py-2.5 border-t border-zinc-800/80 first:border-t-0">
+              <div class="min-w-0 flex-1">
+                <div class="text-xs font-bold text-white truncate">${displayLineTitle}</div>
+                <div class="text-[11px] text-zinc-400 tabular-nums mt-0.5">
+                  ${unitPriceFormatted} ${product.isSocksSpecial ? `· ${unitSuffix}` : ''}
+                </div>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <div class="flex items-center bg-obsidian border border-zinc-800 rounded-lg">
+                  <button onclick="updateCartItemQty('${item.key.replace(/'/g, "\\'")}', -1)" class="w-7 h-7 text-xs font-bold text-zinc-300 hover:text-gold">−</button>
+                  <span class="w-7 text-center text-xs font-bold text-white tabular-nums">${item.qty}</span>
+                  <button onclick="updateCartItemQty('${item.key.replace(/'/g, "\\'")}', 1)" class="w-7 h-7 text-xs font-bold text-zinc-300 hover:text-gold">+</button>
+                </div>
+                <div class="w-20 text-right">
+                  <div class="text-xs font-extrabold text-gold tabular-nums">${lineSubtotalFormatted}</div>
+                  <button onclick="removeCartItem('${item.key.replace(/'/g, "\\'")}')" class="text-[10px] text-zinc-500 hover:text-red-400">Quitar</button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="bg-surface border border-zinc-800 rounded-2xl p-3.5 space-y-2.5">
+            <div class="flex items-start justify-between gap-2">
+              <h4 class="text-xs sm:text-sm font-extrabold text-white leading-snug">${product.name}</h4>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-elevated text-zinc-300 shrink-0 tabular-nums">
+                ${product.isSocksSpecial ? `${items.reduce((s, i) => s + i.qty, 0)} ítems` : `${metrics.totalQty} u. total`}
+              </span>
+            </div>
+            ${wholesaleBannerHTML}
+            <div>${linesHTML}</div>
+          </div>
+        `;
+      }).join('');
+
+      const combinedEstimatedARS = totalARS + (totalUSD * state.usdRate);
+      const info = state.customerInfo;
+      const showErr = state.formValidationAttempted;
+
+      const getInputBorderClass = (val, isRequired = true) => {
+        if (isRequired && showErr && !val.trim()) {
+          return 'border-red-500/80 bg-red-500/5 focus:border-red-400';
+        }
+        return 'border-zinc-800 bg-obsidian focus:border-gold';
+      };
+
+      container.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-zinc-400">${groupedIds.length} ${groupedIds.length === 1 ? 'línea de producto' : 'líneas de productos'}</span>
+          <button onclick="clearCart()" class="text-[11px] font-semibold text-zinc-500 hover:text-red-400 transition-colors">Vaciar pedido</button>
+        </div>
+        ${groupsHTML}
+
+        <!-- Mandatory Customer Checkout Form -->
+        <div id="checkoutCustomerForm" class="bg-surface border border-gold/30 rounded-2xl p-4 space-y-3">
+          <div class="flex items-center justify-between gap-2 border-b border-zinc-800 pb-2.5">
+            <div>
+              <h3 class="text-xs sm:text-sm font-extrabold text-white">Datos para tu Pedido</h3>
+              <p class="text-[11px] text-zinc-400">Completá tus datos para coordinar el cierre por WhatsApp</p>
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-gold/15 text-gold border border-gold/30 shrink-0">
+              Obligatorio
+            </span>
+          </div>
+
+          <div class="space-y-2.5">
+            <div>
+              <label class="block text-[11px] font-bold text-zinc-200 mb-1">✅ Nombre y apellido: <span class="text-gold">*</span></label>
+              <input
+                type="text"
+                value="${escapeHtmlAttr(info.fullName)}"
+                oninput="updateCustomerField('fullName', this.value)"
+                placeholder="Ej: Juan Pérez"
+                class="w-full border rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-colors ${getInputBorderClass(info.fullName, true)}"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div>
+                <label class="block text-[11px] font-bold text-zinc-200 mb-1">✅ DNI: <span class="text-gold">*</span></label>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  value="${escapeHtmlAttr(info.dni)}"
+                  oninput="updateCustomerField('dni', this.value)"
+                  placeholder="Ej: 38.456.789"
+                  class="w-full border rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-colors ${getInputBorderClass(info.dni, true)}"
+                />
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-zinc-200 mb-1">✅ C.P: <span class="text-gold">*</span></label>
+                <input
+                  type="text"
+                  value="${escapeHtmlAttr(info.postalCode)}"
+                  oninput="updateCustomerField('postalCode', this.value)"
+                  placeholder="Ej: 1678"
+                  class="w-full border rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-colors ${getInputBorderClass(info.postalCode, true)}"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold text-zinc-200 mb-1">✅ Localidad: <span class="text-gold">*</span></label>
+              <input
+                type="text"
+                value="${escapeHtmlAttr(info.locality)}"
+                oninput="updateCustomerField('locality', this.value)"
+                placeholder="Ej: Caseros, Buenos Aires"
+                class="w-full border rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-colors ${getInputBorderClass(info.locality, true)}"
+              />
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold text-zinc-200 mb-1">✅ SUCURSAL VIACARGO o CORREO ARGENTINO <span class="text-zinc-400 font-normal">(Si conoce)</span>:</label>
+              <input
+                type="text"
+                value="${escapeHtmlAttr(info.branch)}"
+                oninput="updateCustomerField('branch', this.value)"
+                placeholder="Ej: Sucursal Correo Argentino Caseros / ViaCargo..."
+                class="w-full border rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-colors ${getInputBorderClass(info.branch, false)}"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div>
+                <label class="block text-[11px] font-bold text-zinc-200 mb-1">✅ Número telefónico: <span class="text-gold">*</span></label>
+                <input
+                  type="tel"
+                  value="${escapeHtmlAttr(info.phone)}"
+                  oninput="updateCustomerField('phone', this.value)"
+                  placeholder="Ej: 11 2345-6789"
+                  class="w-full border rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-colors ${getInputBorderClass(info.phone, true)}"
+                />
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-zinc-200 mb-1">✅ Email: <span class="text-gold">*</span></label>
+                <input
+                  type="email"
+                  value="${escapeHtmlAttr(info.email)}"
+                  oninput="updateCustomerField('email', this.value)"
+                  placeholder="Ej: cliente@email.com"
+                  class="w-full border rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-colors ${getInputBorderClass(info.email, true)}"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      footer.innerHTML = `
+        <!-- Totals Breakdown -->
+        <div class="bg-obsidian border border-zinc-800 rounded-xl p-3 space-y-1.5 tabular-nums">
+          ${totalARS > 0 ? `
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-zinc-400">Subtotal en Pesos (ARS):</span>
+              <span class="font-extrabold text-white">${formatARS(totalARS)} ARS</span>
+            </div>
+          ` : ''}
+          ${totalUSD > 0 ? `
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-zinc-400">Subtotal Mayorista (USD):</span>
+              <span class="font-extrabold text-gold">${formatUSD(totalUSD)}</span>
+            </div>
+          ` : ''}
+          <div class="flex items-center justify-between pt-1.5 border-t border-zinc-800/80">
+            <div>
+              <span class="text-xs font-bold text-white block">Total Estimado en ARS</span>
+              <span class="text-[10px] text-zinc-500">Cotización ref. $${state.usdRate.toLocaleString('es-AR')}</span>
+            </div>
+            <span class="text-base font-extrabold text-gold-gradient">${formatARS(combinedEstimatedARS)}</span>
+          </div>
+        </div>
+
+        ${hasBelowMinWarning ? `
+          <div class="text-[11px] text-amber-400 bg-amber-500/10 border border-amber-500/30 rounded-xl px-3 py-2 font-semibold">
+            Revisá los productos con mínimo mayorista antes de confirmar.
+          </div>
+        ` : ''}
+
+        <!-- WhatsApp Closure Notice -->
+        <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-[11px] text-emerald-300 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse"></span>
+          <span>IMPORTANTE: La venta siempre se cierra y coordina por WhatsApp.</span>
+        </div>
+
+        <!-- WhatsApp & Copy Actions -->
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            onclick="copyOrderSummary()"
+            class="px-3 py-3 rounded-xl bg-obsidian hover:bg-elevated border border-zinc-700 text-xs font-bold text-zinc-200 transition-colors shrink-0"
+            title="Copiar resumen del pedido"
+          >
+            Copiar
+          </button>
+          <button
+            type="button"
+            onclick="sendOrderWhatsApp()"
+            class="flex-1 py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.31-1.65a11.87 11.87 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.89-9.9 9.89Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/>
+            </svg>
+            <span>Mandar Pedido por WhatsApp</span>
+          </button>
+        </div>
+      `;
+    }
+
+    function escapeHtmlAttr(str) {
+      return String(str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+    }
+
+    function updateCustomerField(field, val) {
+      state.customerInfo[field] = val;
+      saveCustomerInfo();
+    }
+
+    function validateCustomerForm() {
+      const info = state.customerInfo;
+      const missing = [];
+      if (!info.fullName.trim()) missing.push('Nombre y apellido');
+      if (!info.dni.trim()) missing.push('DNI');
+      if (!info.locality.trim()) missing.push('Localidad');
+      if (!info.postalCode.trim()) missing.push('C.P.');
+      if (!info.phone.trim()) missing.push('Número telefónico');
+      if (!info.email.trim()) missing.push('Email');
+      return missing;
+    }
+
+    function buildOrderSummaryText() {
+      const groupedIds = [...new Set(state.cart.map(i => i.productId))];
+      let totalARS = 0;
+      let totalUSD = 0;
+      const lines = ['*PEDIDO NIVUX (nivux.shop)*', ''];
+
+      groupedIds.forEach(productId => {
+        const product = getProductById(productId);
+        if (!product) return;
+        const items = state.cart.filter(i => i.productId === productId);
+        const metrics = getProductCartMetrics(productId);
+        const hasMultipleChoices = product.variants.length > 1;
+
+        if (!hasMultipleChoices && items.length === 1) {
+          const item = items[0];
+          let unitPrice = 0;
+          let currency = 'ARS';
+          let unitLabel = 'u.';
+
+          if (product.isSocksSpecial) {
+            if (item.unitMode === 'pack') {
+              unitPrice = metrics.packTier.price;
+              unitLabel = item.qty === 1 ? 'pack (3 pares)' : 'packs (3 pares)';
+            } else {
+              unitPrice = metrics.activeDozenTier.price;
+              unitLabel = item.qty === 1 ? 'docena' : 'docenas';
+            }
+          } else {
+            unitPrice = metrics.activeTier.price;
+            currency = metrics.activeTier.currency;
+          }
+
+          const sub = unitPrice * item.qty;
+          if (currency === 'ARS') totalARS += sub;
+          if (currency === 'USD') totalUSD += sub;
+
+          const subStr = currency === 'ARS' ? formatARS(sub) : formatUSD(sub);
+          const unitStr = currency === 'ARS' ? formatARS(unitPrice) : formatUSD(unitPrice);
+          lines.push(`▪ *${product.name}:* ${item.qty} ${unitLabel} × ${unitStr} = *${subStr}*`);
+        } else {
+          const totalGroupQty = items.reduce((s, i) => s + i.qty, 0);
+          lines.push(`▪ *${product.name}*${hasMultipleChoices ? ` (${totalGroupQty} u. total)` : ''}`);
+          items.forEach(item => {
+            let unitPrice = 0;
+            let currency = 'ARS';
+            let unitLabel = 'u.';
+            let labelName = item.variant;
+
+            if (product.isSocksSpecial) {
+              if (item.unitMode === 'pack') {
+                unitPrice = metrics.packTier.price;
+                unitLabel = item.qty === 1 ? 'pack' : 'packs';
+                labelName = 'Pack 3 pares';
+              } else {
+                unitPrice = metrics.activeDozenTier.price;
+                unitLabel = 'doc.';
+                labelName = 'Docena (12 pares)';
+              }
+            } else {
+              unitPrice = metrics.activeTier.price;
+              currency = metrics.activeTier.currency;
+            }
+
+            const sub = unitPrice * item.qty;
+            if (currency === 'ARS') totalARS += sub;
+            if (currency === 'USD') totalUSD += sub;
+
+            const subStr = currency === 'ARS' ? formatARS(sub) : formatUSD(sub);
+            const unitStr = currency === 'ARS' ? formatARS(unitPrice) : formatUSD(unitPrice);
+            lines.push(`   • ${labelName}: ${item.qty} ${unitLabel} × ${unitStr} = *${subStr}*`);
+          });
+        }
+      });
+
+      lines.push('');
+      if (totalARS > 0 && totalUSD === 0) {
+        lines.push(`*Total del Pedido:* ${formatARS(totalARS)} ARS`);
+      } else if (totalUSD > 0 && totalARS === 0) {
+        const estArs = totalUSD * state.usdRate;
+        lines.push(`*Total Mayorista:* ${formatUSD(totalUSD)}`);
+        lines.push(`*Equivalente estimado en ARS (USD ref. $${state.usdRate}):* ${formatARS(estArs)}`);
+      } else {
+        const estArs = totalARS + (totalUSD * state.usdRate);
+        lines.push(`*Subtotal en Pesos:* ${formatARS(totalARS)} ARS`);
+        lines.push(`*Subtotal Mayorista:* ${formatUSD(totalUSD)}`);
+        lines.push(`*Total Estimado en ARS (USD ref. $${state.usdRate}):* ${formatARS(estArs)}`);
+      }
+      lines.push('');
+
+      const info = state.customerInfo;
+      const branchText = info.branch.trim() ? info.branch.trim() : 'A coordinar';
+      lines.push('*DATOS DE ENVÍO Y CONTACTO:*');
+      lines.push(`• *Nombre y apellido:* ${info.fullName.trim()}`);
+      lines.push(`• *DNI:* ${info.dni.trim()}`);
+      lines.push(`• *Localidad:* ${info.locality.trim()}`);
+      lines.push(`• *C.P:* ${info.postalCode.trim()}`);
+      lines.push(`• *Sucursal ViaCargo / Correo Argentino:* ${branchText}`);
+      lines.push(`• *Teléfono:* ${info.phone.trim()}`);
+      lines.push(`• *Email:* ${info.email.trim()}`);
+
+      return lines.join('\n');
+    }
+
+    function sendOrderWhatsApp() {
+      if (state.cart.length === 0) return;
+
+      const missingFields = validateCustomerForm();
+      if (missingFields.length > 0) {
+        state.formValidationAttempted = true;
+        renderCart();
+        const formEl = document.getElementById('checkoutCustomerForm');
+        if (formEl) {
+          formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        showToast(`Completá los datos obligatorios (${missingFields.slice(0, 2).join(', ')}...) para enviar el pedido.`, 'error');
+        return;
+      }
+
+      state.formValidationAttempted = false;
+      renderCart();
+
+      const text = buildOrderSummaryText();
+      const url = `https://wa.me/5491128396149?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    function copyOrderSummary() {
+      if (state.cart.length === 0) return;
+      const text = buildOrderSummaryText();
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('Resumen del pedido copiado al portapapeles.', 'gold');
+      } catch (e) {
+        showToast('No se pudo copiar automáticamente.', 'error');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // ================= PRODUCT DETAIL & ASSORTMENT BUILDER MODAL =================
+    function openProductModal(productId) {
+      state.activeModalProductId = productId;
+      const product = getProductById(productId);
+      if (product && !state.modalAssortmentQtys[productId]) {
+        const initMap = {};
+        product.variants.forEach(v => { initMap[v] = 0; });
+        state.modalAssortmentQtys[productId] = initMap;
+      }
+      renderProductModal(productId);
+      const modal = document.getElementById('productModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      state.activeModalProductId = null;
+      const modal = document.getElementById('productModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function stepModalAssortmentQty(productId, variant, delta) {
+      if (!state.modalAssortmentQtys[productId]) {
+        state.modalAssortmentQtys[productId] = {};
+      }
+      const current = state.modalAssortmentQtys[productId][variant] || 0;
+      state.modalAssortmentQtys[productId][variant] = Math.max(0, current + delta);
+      state.selectedVariants[productId] = variant;
+      renderProductModal(productId);
+    }
+
+    function setModalAssortmentQty(productId, variant, rawVal) {
+      if (!state.modalAssortmentQtys[productId]) {
+        state.modalAssortmentQtys[productId] = {};
+      }
+      const parsed = parseInt(rawVal, 10);
+      state.modalAssortmentQtys[productId][variant] = (!isNaN(parsed) && parsed >= 0) ? parsed : 0;
+      state.selectedVariants[productId] = variant;
+      renderProductModal(productId);
+    }
+
+    function addAssortmentToCart(productId) {
+      const product = getProductById(productId);
+      if (!product) return;
+
+      const qtyMap = state.modalAssortmentQtys[productId] || {};
+      const entries = Object.entries(qtyMap).filter(([, qty]) => qty > 0);
+      const totalSelected = entries.reduce((sum, [, qty]) => sum + qty, 0);
+
+      if (totalSelected === 0) {
+        showToast(`Elegí al menos 1 unidad de ${product.variantLabel.toLowerCase()} para agregar.`, 'error');
+        return;
+      }
+
+      const cartMetrics = getProductCartMetrics(productId);
+      const existingQty = product.isSocksSpecial
+        ? (state.socksOrderMode[productId] === 'dozen' ? cartMetrics.totalDozens : 0)
+        : (cartMetrics?.totalQty || 0);
+
+      if (!product.isSocksSpecial && product.minQty > 1 && (existingQty + totalSelected) < product.minQty) {
+        showToast(`${product.name} requiere mínimo ${product.minQty} unidades surtidas en total.`, 'error');
+        return;
+      }
+
+      const unitMode = product.isSocksSpecial ? (state.socksOrderMode[productId] || 'pack') : 'unit';
+
+      entries.forEach(([variant, qty]) => {
+        const cartKey = `${productId}::${variant}::${unitMode}`;
+        const existing = state.cart.find(item => item.key === cartKey);
+        if (existing) {
+          existing.qty += qty;
+        } else {
+          state.cart.push({
+            key: cartKey,
+            productId,
+            variant,
+            qty,
+            unitMode
+          });
+        }
+        // Reset modal counter after adding
+        state.modalAssortmentQtys[productId][variant] = 0;
+      });
+
+      saveCart();
+      renderCatalog();
+      renderCart();
+
+      const updatedMetrics = getProductCartMetrics(productId);
+      let msg = `Agregadas ${totalSelected} u. surtidas de ${product.name}`;
+      if (updatedMetrics && !updatedMetrics.isSocksSpecial && updatedMetrics.isWholesaleApplied) {
+        msg += ` · ¡Escala x${updatedMetrics.activeTier.min} aplicada!`;
+      }
+      showToast(msg, 'gold');
+      closeProductModal();
+    }
+
+    function renderProductModal(productId) {
+      const product = getProductById(productId);
+      if (!product) return;
+
+      const body = document.getElementById('productModalBody');
+      const selectedVariant = state.selectedVariants[product.id] || product.variants[0];
+      const socksMode = state.socksOrderMode[product.id] || 'pack';
+      const cartMetrics = getProductCartMetrics(product.id);
+      const qtyMap = state.modalAssortmentQtys[product.id] || {};
+
+      const modalSelectedTotal = Object.values(qtyMap).reduce((s, q) => s + (q || 0), 0);
+      const existingInCart = product.isSocksSpecial
+        ? (socksMode === 'dozen' ? (cartMetrics?.totalDozens || 0) : 0)
+        : (cartMetrics?.totalQty || 0);
+
+      const combinedTotal = existingInCart + modalSelectedTotal;
+      const effectiveQtyForTier = Math.max(product.isSocksSpecial ? 1 : product.minQty, combinedTotal);
+
+      let activeModalTier = product.tiers[0];
+      let nextModalTier = null;
+
+      if (product.isSocksSpecial) {
+        if (socksMode === 'pack') {
+          activeModalTier = product.tiers.find(t => t.isPack);
+        } else {
+          const dozenTiers = product.tiers.filter(t => !t.isPack);
+          activeModalTier = dozenTiers[0];
+          for (let i = 0; i < dozenTiers.length; i++) {
+            if (effectiveQtyForTier >= dozenTiers[i].min) {
+              activeModalTier = dozenTiers[i];
+              nextModalTier = dozenTiers[i + 1] || null;
+            }
+          }
+        }
+      } else {
+        for (let i = 0; i < product.tiers.length; i++) {
+          if (effectiveQtyForTier >= product.tiers[i].min) {
+            activeModalTier = product.tiers[i];
+            nextModalTier = product.tiers[i + 1] || null;
+          }
+        }
+      }
+
+      const selectionSubtotal = modalSelectedTotal * activeModalTier.price;
+      const selectionSubtotalStr = modalSelectedTotal === 0
+        ? '$0'
+        : activeModalTier.currency === 'ARS'
+        ? `${formatARS(selectionSubtotal)} ARS`
+        : `${formatUSD(selectionSubtotal)}${state.showArsEq ? ` (≈ ${formatARS(selectionSubtotal * state.usdRate)})` : ''}`;
+
+      const activeUnitStr = activeModalTier.currency === 'ARS'
+        ? `${formatARS(activeModalTier.price)}${product.isSocksSpecial && socksMode === 'dozen' ? ' c/doc' : ' c/u'}`
+        : `${formatUSD(activeModalTier.price)} c/u`;
+
+      body.innerHTML = `
+        <div class="p-5 sm:p-6 space-y-5">
+          <!-- Top Product Info -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+            <div>
+              ${getProductArtworkHTML(product, selectedVariant, 'h-52')}
+            </div>
+            <div class="space-y-2.5">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[11px] font-bold uppercase tracking-widest text-gold">${product.category}</span>
+                ${product.badge ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-gold/20 text-gold border border-gold/40">${product.badge}</span>` : ''}
+              </div>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-white leading-tight">${product.name}</h2>
+
+              <!-- Live Assorted Scale Feedback Box -->
+              <div class="p-3 rounded-xl bg-obsidian border border-gold/35 space-y-1">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-zinc-400">Precio unitario aplicado:</span>
+                  <span class="font-extrabold text-gold tabular-nums">${activeUnitStr}</span>
+                </div>
+                <div class="text-[11px] text-zinc-300 tabular-nums">
+                  ${existingInCart > 0 ? `Ya en carrito: <strong>${existingInCart}</strong> + Selección actual: <strong>${modalSelectedTotal}</strong> = <strong>${combinedTotal}</strong> en total.` : `Seleccionados en surtido: <strong>${modalSelectedTotal}</strong> ${product.isSocksSpecial ? (socksMode === 'pack' ? 'packs' : 'doc.') : 'unid.'}`}
+                </div>
+                ${nextModalTier ? `
+                  <div class="text-[11px] text-emerald-400 font-semibold">
+                    Sumá ${Math.max(1, nextModalTier.min - combinedTotal)} más para bajar a ${nextModalTier.currency === 'ARS' ? formatARS(nextModalTier.price) : formatUSD(nextModalTier.price)} ${product.isSocksSpecial && socksMode === 'dozen' ? 'c/doc' : 'c/u'}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+
+          ${product.isSocksSpecial ? `
+            <div class="grid grid-cols-2 gap-2 bg-obsidian p-1.5 rounded-xl border border-[#24242C]">
+              <button
+                type="button"
+                onclick="setSocksMode('${product.id}', 'pack')"
+                class="py-2 px-3 rounded-lg text-xs font-bold transition-colors ${
+                  socksMode === 'pack' ? 'bg-gold text-obsidian' : 'text-zinc-400 hover:text-white'
+                }"
+              >
+                Pack x3 pares ($17.000)
+              </button>
+              <button
+                type="button"
+                onclick="setSocksMode('${product.id}', 'dozen')"
+                class="py-2 px-3 rounded-lg text-xs font-bold transition-colors ${
+                  socksMode === 'dozen' ? 'bg-gold text-obsidian' : 'text-zinc-400 hover:text-white'
+                }"
+              >
+                Por Docena (Escala Mayorista)
+              </button>
+            </div>
+          ` : ''}
+
+          ${product.variants.length > 1 ? `
+          <!-- Multi-Variant Assortment Builder -->
+          <div class="space-y-2.5 pt-2 border-t border-[#24242C]">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-300">
+                Armá tu surtido por ${product.variantLabel}
+              </span>
+              <span class="text-[11px] text-gold font-semibold">Se suman todas las variantes</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-60 overflow-y-auto pr-1">
+              ${product.variants.map(v => {
+                const vQty = qtyMap[v] || 0;
+                const swatch = product.swatches ? product.swatches[v] : null;
+                const dot = swatch ? `<span class="w-3.5 h-3.5 rounded-full border border-white/30 shrink-0" style="background: ${swatch};"></span>` : '';
+                return `
+                  <div class="flex items-center justify-between gap-2 px-3 py-2 rounded-xl border transition-colors ${
+                    vQty > 0 ? 'bg-gold/10 border-gold/50' : 'bg-obsidian border-[#24242C]'
+                  }">
+                    <div class="flex items-center gap-2 min-w-0">
+                      ${dot}
+                      <span class="text-xs font-bold text-white truncate">${v}</span>
+                    </div>
+                    <div class="flex items-center bg-surface border border-[#24242C] rounded-lg shrink-0">
+                      <button
+                        type="button"
+                        onclick="stepModalAssortmentQty('${product.id}', '${v.replace(/'/g, "\\'")}', -1)"
+                        class="w-7 h-7 flex items-center justify-center text-zinc-300 hover:text-gold font-bold"
+                      >−</button>
+                      <input
+                        type="number"
+                        min="0"
+                        value="${vQty}"
+                        onchange="setModalAssortmentQty('${product.id}', '${v.replace(/'/g, "\\'")}', this.value)"
+                        class="w-8 h-7 text-center bg-transparent text-xs font-extrabold text-white tabular-nums focus:outline-none"
+                      />
+                      <button
+                        type="button"
+                        onclick="stepModalAssortmentQty('${product.id}', '${v.replace(/'/g, "\\'")}', 1)"
+                        class="w-7 h-7 flex items-center justify-center text-zinc-300 hover:text-gold font-bold"
+                      >+</button>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+          ` : `
+          <div class="space-y-2.5 pt-2 border-t border-[#24242C]">
+            <div class="flex items-center justify-between bg-obsidian border border-[#24242C] rounded-xl px-4 py-3">
+              <span class="text-xs font-bold text-white">Cantidad a agregar (${product.isSocksSpecial ? (socksMode === 'pack' ? 'Packs x3 pares' : 'Docenas') : 'Unidades'})</span>
+              <div class="flex items-center bg-surface border border-[#24242C] rounded-lg">
+                <button
+                  type="button"
+                  onclick="stepModalAssortmentQty('${product.id}', '${product.variants[0].replace(/'/g, "\\'")}', -1)"
+                  class="w-8 h-8 flex items-center justify-center text-zinc-300 hover:text-gold font-bold"
+                >−</button>
+                <input
+                  type="number"
+                  min="0"
+                  value="${qtyMap[product.variants[0]] || 0}"
+                  onchange="setModalAssortmentQty('${product.id}', '${product.variants[0].replace(/'/g, "\\'")}', this.value)"
+                  class="w-10 h-8 text-center bg-transparent text-xs font-extrabold text-white tabular-nums focus:outline-none"
+                />
+                <button
+                  type="button"
+                  onclick="stepModalAssortmentQty('${product.id}', '${product.variants[0].replace(/'/g, "\\'")}', 1)"
+                  class="w-8 h-8 flex items-center justify-center text-zinc-300 hover:text-gold font-bold"
+                >+</button>
+              </div>
+            </div>
+          </div>
+          `}
+
+          <!-- Reference Tier Table -->
+          <div class="space-y-2 pt-2 border-t border-[#24242C]">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Escalas Mayoristas Combinables</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+              ${product.tiers.map(t => {
+                const isActive = activeModalTier && activeModalTier.label === t.label;
+                return `
+                  <div class="px-2.5 py-2 rounded-xl border tabular-nums ${
+                    isActive ? 'bg-gold/15 border-gold text-white' : 'bg-obsidian border-[#24242C] text-zinc-400'
+                  }">
+                    <div class="flex items-center justify-between text-xs font-bold">
+                      <span class="${isActive ? 'text-gold' : ''}">${t.label}</span>
+                      <span class="text-white">${t.currency === 'ARS' ? formatARS(t.price) : `${formatUSD(t.price)} c/u`}</span>
+                    </div>
+                    ${t.currency === 'USD' && state.showArsEq ? `<div class="text-[10px] text-zinc-400 text-right">≈ ${formatARS(t.price * state.usdRate)}</div>` : ''}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+
+          <!-- Add Assortment CTA -->
+          <div class="pt-3 border-t border-[#24242C] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-[11px] text-zinc-400 block">Subtotal surtido elegido (${modalSelectedTotal} ${product.isSocksSpecial ? (socksMode === 'pack' ? 'packs' : 'doc.') : 'unid.'}):</span>
+              <span class="text-base font-extrabold text-gold tabular-nums">${selectionSubtotalStr}</span>
+            </div>
+            <button
+              type="button"
+              onclick="addAssortmentToCart('${product.id}')"
+              class="h-11 px-5 rounded-xl bg-gold-gradient text-obsidian font-extrabold text-sm shadow-gold-glow active:scale-95 transition-transform"
+            >
+              Agregar Surtido al Carrito (${modalSelectedTotal})
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // ================= TOAST NOTIFICATIONS (NO ALERT) =================
+    function showToast(message, type = 'gold') {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+
+      const toast = document.createElement('div');
+      const borderClass = type === 'error'
+        ? 'border-red-500/50 text-red-200 bg-zinc-950/95'
+        : 'border-gold/50 text-white bg-zinc-950/95';
+
+      toast.className = `pointer-events-auto flex items-center gap-2 px-4 py-2.5 rounded-xl border shadow-2xl text-xs font-semibold backdrop-blur-md transition-all duration-300 translate-y-2 opacity-0 ${borderClass}`;
+      toast.innerHTML = `
+        <span class="w-2 h-2 rounded-full ${type === 'error' ? 'bg-red-400' : 'bg-gold'} shrink-0"></span>
+        <span>${message}</span>
+      `;
+
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-2', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 2800);
+    }
+
+    // Close modals with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProductModal();
+        closeCart();
+      }
+    });
+
+    // Boot application on load
+    window.addEventListener('DOMContentLoaded', initApp);
+  </script>
+</body>
+</html>
